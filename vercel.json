@@ -16,19 +16,5 @@
       "src": "next.config.js",
       "use": "@vercel/next"
     }
-  ],
-  "routes": [
-    {
-      "src": "/careers",
-      "dest": "/api/server-render?path=/careers"
-    },
-    {
-      "src": "/risks",
-      "dest": "/api/server-render?path=/risks"
-    },
-    {
-      "src": "/team",
-      "dest": "/api/server-render?path=/team"
-    }
   ]
 }

@@ -14,10 +14,16 @@ const nextConfig = {
   },
   images: {
     domains: ["images.unsplash.com"],
+    unoptimized: true,
   },
   // Completely disable static generation
-  staticPageGenerationTimeout: 1000,
-  distDir: process.env.NODE_ENV === 'development' ? '.next' : '.next',
+  staticPageGenerationTimeout: 1,
+  // Skip static generation for problematic pages
+  experimental: {
+    // These settings help with build issues
+    serverMinification: false,
+    serverSourceMaps: false,
+  },
   webpack: (config) => {
     config.resolve.alias["@"] = path.resolve(__dirname, "src");
     return config;
