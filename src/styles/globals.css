@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap");
+
+@layer base {
+  :root {
+    /* Brand Color System - Identity Colors Only */
+    --primary: 44 44 224; /* #2c2ce0 */
+    --primary-dark: 30 30 222; /* #1e1ede */
+    --secondary: 230 138 0; /* #e68a00 */
+    --secondary-dark: 204 122 0; /* #cc7a00 */
+    --success: 0 179 104; /* #00b368 */
+    --error: 220 53 69; /* #dc3545 */
+    --warning: 255 193 7; /* #ffc107 */
+    --info: 33 150 243; /* #2196f3 */
+    --accent: 156 39 176; /* #9c27b0 */
+
+    /* Background colors */
+    --background: #0000ff;
+    --background-light: 250 251 255;
+    --background-default: 245 246 250;
+    --paper: 255 255 255;
+
+    /* Text colors */
+    --foreground: 33 33 33;
+    --muted-foreground: 107 114 128;
+
+    /* Component colors */
+    --card: 255 255 255;
+    --card-foreground: 33 33 33;
+    --popover: 255 255 255;
+    --popover-foreground: 33 33 33;
+    --border: 229 231 235;
+    --input: 229 231 235;
+    --ring: 44 44 224;
+    --radius: 0.75rem;
+
+    /* Sidebar colors */
+    --sidebar-background: 250 251 255;
+    --sidebar-foreground: 60 66 87;
+    --sidebar-primary: 44 44 224;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 240 242 247;
+    --sidebar-accent-foreground: 60 66 87;
+    --sidebar-border: 229 231 235;
+    --sidebar-ring: 44 44 224;
+  }
+
+  .dark {
+    /* Dark theme overrides */
+    --background: 10 10 26;
+    --foreground: 240 242 247;
+    --primary: 77 77 255;
+    --card: 19 19 45;
+    --card-foreground: 240 242 247;
+    --popover: 19 19 45;
+    --popover-foreground: 240 242 247;
+    --border: 42 42 79;
+    --input: 42 42 79;
+    --sidebar-background: 10 10 26;
+    --sidebar-foreground: 189 200 240;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  *:focus,
+  *:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Arabic text styling */
+  [dir="rtl"] {
+    @apply font-arabic text-right;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-grey-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+
+  /* Selection colors */
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+}
+
+@layer components {
+  /* Enhanced button styles - Identity Colors Only */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+  }
+
+  .btn-outline-primary {
+    @apply border-2 border-primary-200 text-primary-100 hover:bg-primary-200 hover:text-primary-900 font-semibold py-3 px-6 rounded-xl transition-all duration-300;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transform hover:scale-105 transition-all duration-300 hover:shadow-2xl;
+  }
+
+  .card-glow {
+    @apply shadow-lg hover:shadow-primary-200/50 transition-all duration-300;
+  }
+
+  /* Text gradients - Identity Colors Only */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary-500 to-secondary-700 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-hero {
+    @apply bg-gradient-to-r from-secondary-400 via-secondary-300 to-secondary-200 bg-clip-text text-transparent;
+  }
+
+  /* Islamic geometric patterns */
+  .pattern-islamic {
+    background-image: radial-gradient(
+      circle at 2px 2px,
+      rgba(44, 44, 224, 0.15) 1px,
+      transparent 0
+    );
+    background-size: 20px 20px;
+  }
+
+  /* Animated gradient backgrounds */
+  .gradient-animate {
+    background: linear-gradient(
+      -45deg,
+      theme("colors.primary.600"),
+      theme("colors.primary.700"),
+      theme("colors.secondary.600"),
+      theme("colors.success.600")
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Loading animations */
+  .loading-pulse {
+    @apply animate-pulse bg-gradient-to-r from-grey-200 to-grey-300;
+  }
+
+  /* Focus styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+}
+
+@layer utilities {
+  /* RTL support utilities */
+  .rtl\:text-right {
+    text-align: right;
+  }
+
+  .rtl\:text-left {
+    text-align: left;
+  }
+
+  .rtl\:flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  /* Animation delays */
+  .delay-75 {
+    animation-delay: 75ms;
+  }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-150 {
+    animation-delay: 150ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+  .delay-700 {
+    animation-delay: 700ms;
+  }
+  .delay-1000 {
+    animation-delay: 1000ms;
+  }
+
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Backdrop utilities */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

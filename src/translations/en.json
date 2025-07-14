@@ -1,0 +1,1187 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "whoWeAre": "Who We Are",
+    "mission": "Our Mission",
+    "leadership": "Leadership",
+    "projects": "Projects",
+    "blog": "Blog",
+    "compliance": "Compliance",
+    "sponsors": "Sponsors",
+    "staff": "Staff",
+    "userRoles": "Roles",
+    "contact": "Contact",
+    "getFunded": "Get Funded",
+    "investNow": "Invest Now",
+    "organizations": "Organizations",
+    "investments": "Investments",
+    "fatwas": "Fatwas"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "loadMore": "Load More",
+    "noResults": "No results found",
+    "tryAgain": "Try Again",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "sending": "Sending...",
+    "clearAll": "Clear All",
+    "more": "more",
+    "add": "Add",
+    "upload": "Upload",
+    "actions": "Actions",
+    "user": "User",
+    "report": "Report",
+    "settings": "Settings"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Latest news and insights from the world of Islamic finance",
+    "featured": "Featured",
+    "trending": "Trending",
+    "readMore": "Read More",
+    "sharePost": "Share Post",
+    "likePost": "Like",
+    "commentPost": "Comment",
+    "searchPlaceholder": "Search articles...",
+    "noPosts": "No posts available",
+    "defaultTitle": "Article Title",
+    "defaultExcerpt": "Article excerpt...",
+    "defaultContent": "Article content...",
+    "defaultCategory": "General",
+    "comments": "Comments",
+    "addComment": "Add a comment...",
+    "postComment": "Post Comment",
+    "noComments": "No comments yet",
+    "relatedPosts": "Related Posts",
+    "author": "Author",
+    "publishDate": "Publish Date",
+    "readTime": "Read Time",
+    "tags": "Tags",
+    "selectType": "Select Type",
+    "selectCategory": "Select Category",
+    "createPost": "Create Post",
+    "editPost": "Edit Post",
+    "saveDraft": "Save Draft",
+    "publish": "Publish",
+    "update": "Update",
+    "draft": "Draft",
+    "published": "Published",
+    "basicInfo": "Basic Information",
+    "content": "Content",
+    "metadata": "Metadata",
+    "titleEn": "Title (English)",
+    "titleAr": "Title (Arabic)",
+    "titlePlaceholder": "Enter post title...",
+    "slug": "URL Slug",
+    "featuredImage": "Featured Image",
+    "excerptEn": "Excerpt (English)",
+    "excerptAr": "Excerpt (Arabic)",
+    "excerptPlaceholder": "Brief description...",
+    "contentEn": "Content (English)",
+    "contentAr": "Content (Arabic)",
+    "contentPlaceholder": "Write your content here...",
+    "type": "Post Type",
+    "addTag": "Add tag",
+    "copyLink": "Copy Link",
+    "linkCopied": "Link Copied!",
+    "totalPosts": "Total Posts",
+    "drafts": "Drafts",
+    "allPosts": "All Posts",
+    "status": "Status",
+    "created": "Created",
+    "reply": "Reply",
+    "yourRating": "Your Rating",
+    "rating": "Rate this post",
+    "viewAll": "View All",
+    "bookmark": "Bookmark",
+    "share": "Share",
+    "min": "min",
+    "publicView": "Public View",
+    "latestArticles": "Latest Articles",
+    "exploreLatest": "Explore our latest articles and insights",
+    "authorBio": "Author Bio",
+    "socialMedia": "Social Media",
+    "shareOnTwitter": "Share on Twitter",
+    "shareOnFacebook": "Share on Facebook",
+    "shareOnLinkedIn": "Share on LinkedIn",
+    "types": {
+      "blog": "Blog",
+      "news": "News",
+      "event": "Event",
+      "page": "Page"
+    },
+    "categories": {
+      "all": "All Categories",
+      "islamicFinance": "Islamic Finance",
+      "successStories": "Success Stories",
+      "marketAnalysis": "Market Analysis",
+      "compliance": "Sharia Compliance",
+      "news": "News",
+      "events": "Events",
+      "investment": "Investment",
+      "funding": "Funding",
+      "entrepreneurship": "Entrepreneurship",
+      "general": "General"
+    },
+    "analytics": {
+      "title": "Post Analytics",
+      "views": "Views",
+      "likes": "Likes",
+      "comments": "Comments",
+      "shares": "Shares",
+      "readTime": "Avg. Read Time",
+      "engagement": "Engagement Rate"
+    },
+    "thisMonth": "this month",
+    "dashboard": {
+      "title": "Blog Dashboard"
+    },
+    "filters": {
+      "recent": "Recent",
+      "popular": "Popular",
+      "trending": "Trending",
+      "featured": "Featured"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Explore Sharia-compliant investment opportunities",
+    "featured": "Featured Projects",
+    "viewAll": "View All",
+    "investNow": "Invest Now",
+    "learnMore": "Learn More",
+    "fundingGoal": "Funding Goal",
+    "amountRaised": "Amount Raised",
+    "daysLeft": "Days Left",
+    "investors": "Investors",
+    "minimumInvestment": "Minimum Investment",
+    "expectedReturn": "Expected Return",
+    "riskLevel": "Risk Level",
+    "projectStatus": "Project Status",
+    "location": "Location",
+    "category": "Category",
+    "description": "Description",
+    "highlights": "Key Highlights",
+    "timeline": "Timeline",
+    "team": "Team",
+    "documents": "Documents",
+    "updates": "Updates",
+    "faq": "FAQ",
+    "investment": "Investment",
+    "makeinvestment": "Make Investment",
+    "shariaCompliance": "Sharia Compliance",
+    "certifications": "Certifications",
+    "fatwa": "Sharia Fatwa",
+    "scholarName": "Scholar Name",
+    "issuedDate": "Issued Date",
+    "validUntil": "Valid Until",
+    "issuedBy": "Issued By",
+    "issued": "Issued",
+    "viewCertificate": "View Certificate",
+    "viewFatwaDocument": "View Fatwa Document",
+    "noCertifications": "No certifications available",
+    "noFatwa": "No Sharia fatwa available",
+    "fatwaInReview": "Fatwa is under review by our scholars",
+    "shariaApproved": "Sharia Approved",
+    "shariaApprovedDesc": "This project has been approved by our certified Islamic scholars",
+    "halalCertified": "Halal Certified",
+    "lastUpdated": "Last Updated",
+    "fundingProgress": "Funding Progress",
+    "funded": "Funded",
+    "raised": "Raised",
+    "goal": "Goal",
+    "backers": "Backers",
+    "investments": "Investments",
+    "favorite": "Favorite",
+    "share": "Share",
+    "organization": "Organization",
+    "defaultCategory": "General",
+    "defaultDescription": "Project description...",
+    "verified": "Verified",
+    "fatwaStatus": {
+      "approved": "Approved",
+      "pending": "Pending",
+      "rejected": "Rejected"
+    },
+    "status": {
+      "active": "Active",
+      "completed": "Completed",
+      "pending": "Pending",
+      "cancelled": "Cancelled",
+      "funding": "Funding",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "draft": "Draft"
+    },
+    "categories": {
+      "all": "All Categories",
+      "technology": "Technology",
+      "healthcare": "Healthcare",
+      "education": "Education",
+      "realestate": "Real Estate",
+      "manufacturing": "Manufacturing",
+      "agriculture": "Agriculture",
+      "energy": "Energy",
+      "finance": "Finance",
+      "retail": "Retail",
+      "logistics": "Logistics"
+    },
+    "riskLevels": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "noProjects": "No projects available",
+    "searchPlaceholder": "Search projects...",
+    "filters": {
+      "newest": "Newest",
+      "popular": "Popular",
+      "trending": "Trending",
+      "endingSoon": "Ending Soon",
+      "fullyFunded": "Fully Funded"
+    },
+    "investmentSteps": {
+      "title": "Investment Steps",
+      "step1": "Choose Project",
+      "step1Desc": "Select a project that matches your investment goals",
+      "step2": "Review Details",
+      "step2Desc": "Review all project details and Sharia compliance documents",
+      "step3": "Set Investment Amount",
+      "step3Desc": "Determine the amount you want to invest",
+      "step4": "Complete Investment",
+      "step4Desc": "Complete your investment securely"
+    }
+  },
+  "organizations": {
+    "title": "Organizations",
+    "subtitle": "Trusted partners in Islamic finance",
+    "verified": "Verified",
+    "projects": "Projects",
+    "rating": "Rating",
+    "viewProjects": "View Projects",
+    "noOrganizations": "No organizations available",
+    "noDescription": "No description available",
+    "viewDetails": "View Details",
+    "resultsFound": "results found",
+    "errorLoading": "Error loading organizations",
+    "about": "About",
+    "details": "Details",
+    "established": "Established",
+    "tier": "Tier",
+    "location": "Location",
+    "projectCount": "Projects",
+    "viewProject": "View Project",
+    "noProjects": "No projects available",
+    "contactInfo": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "website": "Website",
+    "address": "Address",
+    "tabs": {
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "stats": {
+      "total": "Total Organizations",
+      "verified": "Verified Organizations",
+      "premium": "Premium Partners",
+      "active": "Active Organizations"
+    },
+    "filters": {
+      "title": "Filters",
+      "tierLabel": "Organization Tier",
+      "allTiers": "All Tiers",
+      "platinum": "Platinum",
+      "gold": "Gold",
+      "silver": "Silver",
+      "bronze": "Bronze",
+      "verifiedOnly": "Verified Only"
+    },
+    "search": {
+      "placeholder": "Search organizations..."
+    }
+  },
+
+  "fatwas": {
+    "title": "Fatwas",
+    "subtitle": "Sharia compliance rulings",
+    "fatwa": "Fatwa",
+    "scholar": "Scholar",
+    "expired": "Expired",
+    "noSummary": "No summary available",
+    "issuedOn": "Issued On",
+    "expiresOn": "Expires On",
+    "issuedBy": "Issued By",
+    "viewDocument": "View Document",
+    "viewDetails": "View Details",
+    "approvedFatwas": "Approved",
+    "pendingFatwas": "Pending",
+    "expiredFatwas": "Expired",
+    "noFatwas": "No fatwas available",
+    "status": {
+      "approved": "Approved",
+      "pending": "Pending",
+      "rejected": "Rejected",
+      "expired": "Expired"
+    }
+  },
+  "content": {
+    "posts": "Posts",
+    "comments": "Comments",
+    "ratings": "Ratings",
+    "statistics": "Statistics",
+    "faqs": "FAQs",
+    "sections": "Sections",
+    "references": "References",
+    "shares": "Shares",
+    "user": "User",
+    "likes": "likes",
+    "noComments": "No comments yet",
+    "source": "Source",
+    "section": "Section",
+    "noStatistics": "No statistics available",
+    "noFaqs": "No FAQs available",
+    "overview": "Content Overview"
+  },
+  "stats": {
+    "title": "Our Statistics",
+    "subtitle": "Numbers that showcase our success in serving the investment community"
+  },
+
+  "featuredProjects": {
+    "title": "Featured Projects",
+    "subtitle": "Discover the best Sharia-compliant investment opportunities",
+    "viewAll": "View All Projects"
+  },
+  "trendingPosts": {
+    "title": "Trending Posts",
+    "subtitle": "Latest Articles & News",
+    "description": "Stay updated with the latest developments in Islamic finance and investment",
+    "button": "View All Articles"
+  },
+  "compliance": {
+    "title": "Sharia Compliance",
+    "subtitle": "Ensuring all operations meet Islamic financial principles",
+    "tabs": {
+      "overview": "Overview",
+      "fatwas": "Fatwas",
+      "certifications": "Certifications"
+    },
+    "stats": {
+      "approvedFatwas": "Approved Fatwas",
+      "certifications": "Certifications",
+      "scholars": "Certified Scholars",
+      "complianceRate": "Compliance Rate"
+    },
+    "status": {
+      "approved": "Approved",
+      "pending": "Pending Review",
+      "under-review": "Under Review"
+    },
+    "viewDocument": "View Document",
+    "download": "Download",
+    "viewCertificate": "View Certificate",
+    "issueDate": "Issue Date",
+    "expiryDate": "Expiry Date",
+    "overview": {
+      "principles": {
+        "title": "Sharia Principles",
+        "principle1": "Prohibition of Riba (Interest)",
+        "principle2": "Prohibition of Gharar (Excessive Uncertainty)",
+        "principle3": "Prohibition of Haram Industries",
+        "principle4": "Asset-Backed Transactions"
+      },
+      "process": {
+        "title": "Compliance Process",
+        "step1": {
+          "title": "Initial Review",
+          "description": "All projects undergo preliminary Sharia compliance screening"
+        },
+        "step2": {
+          "title": "Scholar Assessment",
+          "description": "Certified Islamic scholars review project details and structure"
+        },
+        "step3": {
+          "title": "Fatwa Issuance",
+          "description": "Formal Sharia compliance ruling is issued upon approval"
+        }
+      }
+    },
+    "fatwas": {
+      "fatwa1": {
+        "title": "Real Estate Investment Compliance",
+        "summary": "Comprehensive ruling on Sharia-compliant real estate investment structures"
+      },
+      "fatwa2": {
+        "title": "Technology Sector Investments",
+        "summary": "Guidelines for investing in technology companies while maintaining Sharia compliance"
+      },
+      "fatwa3": {
+        "title": "Renewable Energy Projects",
+        "summary": "Fatwa covering the permissibility of renewable energy investments under Islamic law"
+      }
+    }
+  },
+
+  "hero": {
+    "title": "Awqef Investment Platform",
+    "subtitle": "Islamic Investment Platform",
+    "description": "Invest with confidence in Sharia-compliant opportunities that align with your values and grow your wealth ethically.",
+    "startInvesting": "Start Investing",
+    "learnMore": "Learn More"
+  },
+  "roles": {
+    "guest": "Guest",
+    "investor": "Investor",
+    "institution": "Institution",
+    "admin": "Admin"
+  },
+  "actions": {
+    "viewPosts": "View Posts",
+    "comment": "Comment",
+    "createPost": "Create Post",
+    "editPost": "Edit Post",
+    "publishPost": "Publish Post",
+    "archivePost": "Archive Post",
+    "deletePost": "Delete Post"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team for any inquiries or support",
+    "getInTouch": "Get In Touch",
+    "sendMessage": "Send Message",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "hours": "Business Hours",
+    "addressValue": "Dubai International Financial Centre, UAE",
+    "hoursValue": "Sunday - Thursday, 9:00 AM - 6:00 PM",
+    "name": "Full Name",
+    "subject": "Subject",
+    "message": "Message"
+  },
+
+  "staff": {
+    "title": "Our Team",
+    "subtitle": "Meet the experts behind Awqef's success in Islamic finance and investment",
+    "departments": {
+      "all": "All Departments",
+      "leadership": "Leadership",
+      "investment": "Investment",
+      "compliance": "Compliance",
+      "operations": "Operations"
+    },
+    "stats": {
+      "totalStaff": "Team Members",
+      "experience": "Years Experience",
+      "certifications": "Certifications",
+      "countries": "Countries"
+    },
+    "viewProfile": "View Profile",
+    "joinTeam": {
+      "title": "Join Our Team",
+      "description": "Be part of a dynamic team that's shaping the future of Islamic finance",
+      "cta": "View Open Positions"
+    },
+    "members": {
+      "member1": {
+        "position": "Chief Executive Officer",
+        "bio": "Leading expert in Islamic finance with over 15 years of experience"
+      },
+      "member2": {
+        "position": "Chief Investment Officer",
+        "bio": "Specialized in portfolio management and Islamic investment strategies"
+      },
+      "member3": {
+        "position": "Head of Sharia Compliance",
+        "bio": "Renowned Islamic scholar ensuring all products meet Sharia standards"
+      },
+      "member4": {
+        "position": "Head of Operations",
+        "bio": "Operations expert focused on delivering exceptional client experiences"
+      }
+    }
+  },
+  "funding": {
+    "title": "Get Funded",
+    "subtitle": "Access Sharia-compliant funding solutions tailored to your business needs",
+    "stats": {
+      "totalFunded": "Total Funded",
+      "projects": "Projects Funded",
+      "successRate": "Success Rate",
+      "avgTime": "Avg. Approval Time"
+    },
+    "programs": {
+      "title": "Funding Programs",
+      "program1": {
+        "title": "Small Business Funding",
+        "description": "Perfect for small businesses looking to expand operations",
+        "req1": "Minimum 2 years in business",
+        "req2": "Annual revenue of $100K+",
+        "req3": "Sharia-compliant business model",
+        "benefit1": "Flexible repayment terms",
+        "benefit2": "No hidden fees",
+        "benefit3": "Fast approval process"
+      },
+      "program2": {
+        "title": "Real Estate Development",
+        "description": "Funding for real estate development and investment projects",
+        "req1": "Proven track record in real estate",
+        "req2": "Detailed project feasibility study",
+        "req3": "Compliance with local regulations",
+        "benefit1": "Competitive profit-sharing rates",
+        "benefit2": "Professional project support",
+        "benefit3": "Flexible funding structure"
+      },
+      "program3": {
+        "title": "Technology Startups",
+        "description": "Specialized funding for innovative technology companies",
+        "req1": "Innovative technology solution",
+        "req2": "Experienced management team",
+        "req3": "Scalable business model",
+        "benefit1": "Mentorship and guidance",
+        "benefit2": "Network access",
+        "benefit3": "Growth-focused terms"
+      }
+    },
+    "process": {
+      "title": "Application Process",
+      "steps": {
+        "step1": {
+          "title": "Submit Application",
+          "description": "Complete the funding application form"
+        },
+        "step2": {
+          "title": "Document Review",
+          "description": "We review your business documents"
+        },
+        "step3": {
+          "title": "Assessment",
+          "description": "Business assessment and due diligence"
+        },
+        "step4": {
+          "title": "Sharia Review",
+          "description": "Compliance verification by our scholars"
+        },
+        "step5": {
+          "title": "Funding Approval",
+          "description": "Final approval and fund disbursement"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Take the first step towards securing funding for your business growth",
+      "startApplication": "Start Application",
+      "schedule": "Schedule Consultation"
+    }
+  },
+  "investments": {
+    "title": "Investment Opportunities",
+    "subtitle": "Discover vetted Sharia-compliant investment opportunities with attractive returns",
+    "portfolio": {
+      "title": "Portfolio Overview",
+      "stats": {
+        "totalValue": "Total Portfolio Value",
+        "activeInvestments": "Active Investments",
+        "avgReturn": "Average Return",
+        "totalReturn": "Total Returns"
+      }
+    },
+    "categories": {
+      "all": "All Categories",
+      "realEstate": "Real Estate",
+      "technology": "Technology",
+      "healthcare": "Healthcare",
+      "energy": "Energy"
+    },
+    "shariaCertified": "Sharia Certified",
+    "risk": {
+      "low": "Low Risk",
+      "medium": "Medium Risk",
+      "high": "High Risk"
+    },
+    "expectedReturn": "Expected Return",
+    "duration": "Duration",
+    "minInvestment": "Min. Investment",
+    "progress": "Funding Progress",
+    "details": "Details",
+    "invest": "Invest",
+    "calculator": {
+      "title": "Investment Calculator",
+      "description": "Calculate your potential returns with our investment calculator",
+      "amount": "Investment Amount",
+      "estimatedReturn": "Estimated Return (14% annually)",
+      "profit": "Estimated Profit",
+      "startInvesting": "Start Investing"
+    },
+    "opportunities": {
+      "opp1": {
+        "title": "Dubai Marina Residential Complex",
+        "description": "Premium residential development in Dubai Marina with guaranteed rental yields"
+      },
+      "opp2": {
+        "title": "Islamic FinTech Platform",
+        "description": "Revolutionary financial technology platform serving the Islamic banking sector"
+      },
+      "opp3": {
+        "title": "Healthcare Technology Solutions",
+        "description": "Innovative healthcare technology improving patient care across the region"
+      }
+    }
+  },
+  "about": {
+    "mission": {
+      "title": "Our Mission",
+      "intro": "At Awqef, we bridge the gap between traditional Islamic values and modern investment opportunities. Our platform ensures every investment adheres to Sharia principles while delivering competitive returns.",
+      "content": "This is the mission section. Add your translated content here."
+    },
+    "leadership": {
+      "title": "Leadership",
+      "content": "This is the leadership section. Add your translated content here."
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "content": "This is the team section. Add your translated content here."
+  },
+  "careers": {
+    "title": "Careers",
+    "content": "This is the careers section. Add your translated content here."
+  },
+  "press": {
+    "title": "Press & Media",
+    "content": "This is the press & media section. Add your translated content here."
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "content": "This is the How It Works section. Add your translated content here."
+  },
+  "sharia": {
+    "title": "Sharia Compliance",
+    "content": "This is the Sharia Compliance section. Add your translated content here."
+  },
+  "calculator": {
+    "title": "Returns Calculator",
+    "content": "This is the Returns Calculator section. Add your translated content here."
+  },
+  "research": {
+    "title": "Research",
+    "content": "This is the Research section. Add your translated content here."
+  },
+  "help": {
+    "title": "Help Center",
+    "content": "This is the Help Center section. Add your translated content here."
+  },
+  "webinars": {
+    "title": "Webinars",
+    "content": "This is the Webinars section. Add your translated content here."
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "content": "This is the Terms of Service section. Add your translated content here."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "content": "This is the Privacy Policy section. Add your translated content here."
+  },
+  "risks": {
+    "title": "Risk Disclosure",
+    "content": "This is the Risk Disclosure section. Add your translated content here."
+  },
+  "footer": {
+    "platform": {
+      "title": "Platform",
+      "howItWorks": "How It Works",
+      "investments": "Investment Options",
+      "sharia": "Sharia Compliance",
+      "calculator": "Returns Calculator"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "team": "Our Team",
+      "careers": "Careers",
+      "press": "Press & Media"
+    },
+    "resources": {
+      "title": "Resources",
+      "blog": "Blog",
+      "research": "Research",
+      "help": "Help Center",
+      "webinars": "Webinars"
+    },
+    "legal": {
+      "title": "Legal",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "risks": "Risk Disclosure",
+      "compliance": "Compliance"
+    }
+  },
+  "whoWeAre": {
+    "title": "Who We Are",
+    "subtitle": "About Us",
+    "feature1": {
+      "title": "Established Excellence",
+      "description": "Founded by Islamic finance experts with decades of experience"
+    },
+    "feature2": {
+      "title": "Trusted Security",
+      "description": "Bank-level security protecting your investments and data"
+    },
+    "feature3": {
+      "title": "Proven Results",
+      "description": "Consistent returns averaging 12-15% annually"
+    }
+  },
+  "userRoles": {
+    "title": "User Roles & Permissions",
+    "subtitle": "User Roles and Permissions",
+    "description": "Different user roles have access to different features and capabilities",
+    "flowTitle": "Content Management Flow",
+    "flowStep": {
+      "create": "Create",
+      "edit": "Edit",
+      "review": "Review",
+      "publish": "Publish",
+      "archive": "Archive"
+    }
+  },
+  "timeline": {
+    "title": "Your Investment Journey",
+    "subtitle": "Your Investment Journey",
+    "description": "Follow these five simple steps to start your halal investment journey with confidence",
+    "step": "Step",
+    "steps": {
+      "1": {
+        "title": "Account Registration",
+        "description": "Create your account with our simple and secure registration process"
+      },
+      "2": {
+        "title": "Sharia Compliance Verification",
+        "description": "Our scholars verify all investment opportunities for Sharia compliance"
+      },
+      "3": {
+        "title": "Investment Selection",
+        "description": "Choose from our curated portfolio of halal investment opportunities"
+      },
+      "4": {
+        "title": "Portfolio Management",
+        "description": "Monitor and manage your investments with our advanced tools"
+      },
+      "5": {
+        "title": "Returns & Growth",
+        "description": "Watch your wealth grow through ethical and sustainable investments"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "What Our Investors Say",
+    "subtitle": "What Our Investors Say",
+    "description": "Hear from our satisfied investors about their experience with our platform",
+    "1": {
+      "name": "Ahmed Al-Rashid",
+      "position": "CEO, Tech Solutions",
+      "content": "Awqef has transformed how I approach Islamic investing. The platform's transparency and Sharia compliance give me complete confidence in my investment decisions.",
+      "location": "Dubai, UAE"
+    },
+    "2": {
+      "name": "Fatima Hassan",
+      "position": "Financial Advisor",
+      "content": "The returns have consistently exceeded my expectations while maintaining full Sharia compliance. Excellent platform for ethical investing.",
+      "location": "Riyadh, Saudi Arabia"
+    },
+    "3": {
+      "name": "Omar Malik",
+      "position": "Investment Manager",
+      "content": "Outstanding service and expert guidance. The team's knowledge of Islamic finance principles is exceptional.",
+      "location": "Kuala Lumpur, Malaysia"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the most common questions about our services",
+    "noResults": "No questions match your search",
+    "description": "Find answers to common questions about our platform, investment process, and Sharia compliance.",
+    "faq1": {
+      "question": "What makes Awqef investments Sharia-compliant?",
+      "answer": "All our investment opportunities are reviewed and approved by our Sharia board, consisting of renowned Islamic scholars. We ensure no involvement in prohibited activities like gambling, alcohol, or interest-based transactions."
+    },
+    "faq2": {
+      "question": "What is the minimum investment amount?",
+      "answer": "The minimum investment varies by project, typically starting from $1,000. Some projects may have higher minimums depending on their nature and requirements."
+    },
+    "faq3": {
+      "question": "How are returns distributed?",
+      "answer": "Returns are distributed according to Islamic profit-sharing principles (Mudarabah). Investors receive their share of profits based on their investment proportion, typically on a quarterly basis."
+    },
+    "faq4": {
+      "question": "What happens if a project faces losses?",
+      "answer": "In Islamic finance, losses are shared proportionally among investors. However, we conduct thorough due diligence to minimize risks and provide detailed risk assessments for each investment opportunity."
+    },
+    "faq5": {
+      "question": "How can I withdraw my investment?",
+      "answer": "Withdrawal terms vary by investment type. Some investments have lock-in periods, while others offer more flexibility. Details are provided in each investment's prospectus."
+    },
+    "faq6": {
+      "question": "Is the platform regulated?",
+      "answer": "Yes, Awqef is fully licensed and regulated by relevant financial authorities. We comply with international standards for investor protection and financial transparency."
+    }
+  },
+  "sponsors": {
+    "title": "Trusted Partners",
+    "subtitle": "Trusted Partners",
+    "description": "We collaborate with leading Islamic financial institutions globally",
+    "1": {
+      "name": "Islamic Development Bank"
+    },
+    "2": {
+      "name": "Shariah Board Council"
+    },
+    "3": {
+      "name": "Saudi Islamic Bank"
+    },
+    "4": {
+      "name": "Al Rajhi Bank"
+    },
+    "5": {
+      "name": "Soudi Finance House"
+    },
+    "6": {
+      "name": "Maybank Islamic"
+    },
+    "7": {
+      "name": "HSBC Amanah"
+    },
+    "8": {
+      "name": "Standard Chartered Saadiq"
+    },
+    "trust": {
+      "1": {
+        "title": "Regulated & Secure",
+        "desc": "Licensed by financial authorities"
+      },
+      "2": {
+        "title": "Sharia Certified",
+        "desc": "Approved by leading Islamic scholars"
+      },
+      "3": {
+        "title": "Global Reach",
+        "desc": "Serving clients in 50+ countries"
+      }
+    }
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "content": "Content",
+
+    "compliance": "Compliance",
+    "settings": "Settings",
+    "logout": "Logout",
+    "profile": "Profile",
+    "search": "Search...",
+    "notifications": "Notifications",
+    "viewAll": "View all",
+    "language": "Language",
+    "systemSettings": "System Settings",
+    "thisMonth": "this month",
+    "recentActivity": "Recent Activity",
+    "latestActions": "Latest actions from users",
+    "newPostPublished": "New post published",
+    "detailedAnalytics": "Detailed analytics and insights",
+    "advancedAnalytics": "Advanced Analytics Dashboard",
+    "generateReports": "Generate custom reports",
+    "reportsDashboard": "Reports Dashboard",
+    "routes": {
+      "createFatwa": "Create New Fatwa",
+      "editFatwa": "Edit Fatwa",
+      "viewFatwa": "View Fatwa",
+      "createOrganization": "Create Organization",
+      "editOrganization": "Edit Organization",
+      "viewOrganization": "View Organization",
+      "manageMembers": "Manage Members",
+      "viewProjects": "View Projects",
+      "createProject": "Create Project",
+      "editProject": "Edit Project",
+      "viewProject": "View Project",
+      "viewInvestments": "View Investments",
+      "viewPledges": "View Pledges",
+      "createPost": "Create Post",
+      "editPost": "Edit Post",
+      "viewPost": "View Post",
+      "createCategory": "Create Category",
+      "editCategory": "Edit Category"
+    },
+    "organizations": {
+      "createTitle": "Create Organization",
+      "editTitle": "Edit Organization",
+      "listTitle": "Organizations",
+      "details": "Organization Details",
+      "enterDetails": "Enter the details for the new organization",
+      "updateDetails": "Update the organization's information",
+      "nameEn": "Name (English)",
+      "nameAr": "Name (Arabic)",
+      "descriptionEn": "Description (English)",
+      "descriptionAr": "Description (Arabic)",
+      "logoUrl": "Logo URL",
+      "logoDesc": "Enter the URL of the organization's logo",
+      "tier": "Tier",
+      "isVerified": "Verified Organization",
+      "markVerified": "Mark this organization as verified",
+      "saveChanges": "Save Changes",
+      "creating": "Creating...",
+      "saving": "Saving...",
+      "bronze": "Bronze",
+      "silver": "Silver",
+      "gold": "Gold",
+      "platinum": "Platinum",
+      "cancel": "Cancel",
+      "create": "Create Organization",
+      "email": "Email",
+      "projects": "Projects",
+      "members": "Members",
+      "verified": "Verified",
+      "unverified": "Unverified",
+      "viewDetails": "View Details",
+      "viewPublic": "View Public",
+      "edit": "Edit",
+      "manageMembers": "Manage Members",
+      "delete": "Delete",
+      "organizationDetails": "Organization Details",
+      "detailedInfo": "Detailed information about the organization"
+    },
+    "projects": {
+      "listTitle": "Projects",
+      "allProjects": "All Projects",
+      "activeProjects": "Active Projects",
+      "pendingProjects": "Pending Projects",
+      "completedProjects": "Completed Projects",
+      "cancelledProjects": "Cancelled Projects",
+      "fundingProgress": "Funding Progress",
+      "targetAmount": "Target Amount",
+      "raisedAmount": "Raised Amount",
+      "investorCount": "Investors",
+      "shariaCompliant": "Sharia Compliant",
+      "investments": "Investments",
+      "pledges": "Pledges",
+      "compliance": "Compliance",
+      "newProject": "New Project",
+      "searchProjects": "Search projects...",
+      "manageProjects": "Manage all investment projects and opportunities",
+      "noProjectsFound": "No projects found",
+      "projectDetails": "Project Details",
+      "detailedInfo": "Detailed information about the project",
+      "viewDetails": "View Details",
+      "viewPublic": "View Public",
+      "edit": "Edit",
+      "delete": "Delete",
+      "category": "Category",
+      "status": "Status",
+      "progress": "Progress",
+      "sharia": "Sharia",
+      "compliant": "Compliant",
+      "pending": "Pending",
+      "description": "Description",
+      "descriptionArabic": "Description (Arabic)",
+      "noDescription": "No description available",
+      "actions": "Actions",
+      "investmentDetails": "Investment Details",
+      "investmentDetailsDesc": "Detailed information about the investment",
+      "pledgeDetails": "Pledge Details",
+      "pledgeDetailsDesc": "Detailed information about the pledge",
+      "investor": "Investor",
+      "amount": "Amount",
+      "date": "Date",
+      "approvedDate": "Approved Date",
+      "fulfilledDate": "Fulfilled Date",
+      "notes": "Notes",
+      "noNotes": "No notes available",
+      "approve": "Approve",
+      "reject": "Reject",
+      "markFulfilled": "Mark as Fulfilled"
+    },
+    "posts": {
+      "listTitle": "Posts",
+      "allPosts": "All Posts",
+      "publishedPosts": "Published",
+      "draftPosts": "Drafts",
+      "archivedPosts": "Archived",
+      "category": "Category",
+      "publishDate": "Publish Date",
+      "viewPost": "View",
+      "editPost": "Edit",
+      "deletePost": "Delete",
+      "createPost": "Create Post",
+      "editPostTitle": "Edit Post",
+      "makeChanges": "Make changes to the post. Click save when you're done.",
+      "createNewPost": "Create New Post",
+      "fillDetails": "Fill in the details for your new post.",
+      "newPost": "New Post",
+      "searchPosts": "Search posts...",
+      "filter": "Filter",
+      "status": "Status",
+      "date": "Date",
+      "actions": "Actions",
+      "noPosts": "No posts found",
+      "showing": "Showing",
+      "of": "of",
+      "posts": "posts",
+      "page": "Page",
+      "previous": "Previous",
+      "next": "Next",
+      "title": "Title",
+      "content": "Content",
+      "saveChanges": "Save Changes",
+      "cancel": "Cancel",
+      "createCategory": "Create New Category",
+      "editCategory": "Edit Category",
+      "categoryDetails": "Add a new category for organizing content or projects",
+      "updateCategory": "Make changes to the category details",
+      "nameEn": "Name (English)",
+      "nameAr": "Name (Arabic)",
+      "slug": "Slug",
+      "slugDesc": "URL-friendly version of the name. Auto-generated from the English name.",
+      "descriptionEn": "Description (English)",
+      "descriptionAr": "Description (Arabic)"
+    },
+    "categories": {
+      "listTitle": "Categories",
+      "newCategory": "New Category",
+      "searchCategories": "Search categories...",
+      "contentCategories": "Content Categories",
+      "projectCategories": "Project Categories",
+      "manageContentCategories": "Manage categories for blog posts, articles, and other content.",
+      "manageProjectCategories": "Manage categories for investment projects and opportunities.",
+      "noCategoriesFound": "No categories found",
+      "createNewCategory": "Create New Category",
+      "editCategory": "Edit Category",
+      "categoryDetails": "Add a new category for organizing content or projects",
+      "updateCategory": "Make changes to the category details",
+      "nameEn": "Name (English)",
+      "nameAr": "Name (Arabic)",
+      "arabicName": "Arabic Name",
+      "slug": "Slug",
+      "slugDesc": "URL-friendly version of the name. Auto-generated from the English name.",
+      "descriptionEn": "Description (English)",
+      "descriptionAr": "Description (Arabic)",
+      "saveChanges": "Save Changes",
+      "cancel": "Cancel",
+      "createCategory": "Create Category",
+      "unnamedCategory": "Unnamed Category"
+    },
+    "header": {
+      "newComment": "New comment on post",
+      "newProject": "New project submitted"
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "content": "Content",
+      "posts": "Posts",
+      "categories": "Categories",
+      "comments": "Comments",
+      "projects": "Projects",
+      "allProjects": "All Projects",
+      "investments": "Investments",
+      "pledges": "Pledges",
+      "organizations": "Organizations",
+      "allOrganizations": "All Organizations",
+      "members": "Members",
+      "compliance": "Compliance",
+      "fatwas": "Fatwas",
+      "certifications": "Certifications",
+      "settings": "Settings"
+    },
+    "stats": {
+      "totalPosts": "Total Posts",
+      "totalProjects": "Total Projects",
+      "organizations": "Organizations",
+      "totalComments": "Total Comments",
+      "activeInvestments": "Active Investments",
+      "totalPledged": "Total Pledged",
+      "activeUsers": "Active Users",
+      "certifications": "Certifications",
+      "change": "{value} change",
+      "noChange": "No change"
+    },
+    "ui": {
+      "newFatwa": "New Fatwa",
+      "searchFatwas": "Search fatwas...",
+      "shariaComplianceFatwas": "Sharia Compliance Fatwas",
+      "manageFatwas": "Manage fatwas and Sharia compliance certifications for projects and investments",
+      "noFatwasFound": "No fatwas found",
+      "untitledFatwa": "Untitled Fatwa",
+      "unknownScholar": "Unknown Scholar",
+      "viewDetails": "View Details",
+      "fatwaDetails": "Fatwa Details",
+      "fatwaDetailsDesc": "Detailed information about the Sharia compliance fatwa",
+      "documentInfo": "Document Information",
+      "fatwaDocument": "Fatwa Document",
+      "viewDocument": "View Document",
+      "download": "Download",
+      "actions": "Actions",
+      "summary": "Summary",
+      "summaryArabic": "Summary (Arabic)",
+      "noSummary": "No summary available",
+      "content": "Content",
+      "title": "Title",
+      "scholar": "Scholar",
+      "project": "Project",
+      "status": "Status",
+      "issueDate": "Issue Date",
+      "expiryDate": "Expiry Date",
+      "created": "Created",
+      "filter": "Filter",
+      "allStatuses": "All Statuses",
+      "approved": "Approved",
+      "pending": "Pending",
+      "rejected": "Rejected",
+      "expired": "Expired",
+      "newOrganization": "New Organization",
+      "searchOrganizations": "Search organizations...",
+      "allOrganizations": "All Organizations",
+      "manageOrganizations": "Manage organizations and their members",
+      "noOrganizationsFound": "No organizations found",
+      "organizationDetails": "Organization Details",
+      "organizationDetailsDesc": "Detailed information about the organization",
+      "description": "Description",
+      "descriptionArabic": "Description (Arabic)",
+      "noDescription": "No description available",
+      "newProject": "New Project",
+      "searchProjects": "Search projects...",
+      "allProjects": "All Projects",
+      "manageProjects": "Manage all investment projects and opportunities",
+      "noProjectsFound": "No projects found",
+      "projectDetails": "Project Details",
+      "projectDetailsDesc": "Detailed information about the project",
+      "fundingProgress": "Funding Progress",
+      "searchInvestments": "Search investments...",
+      "projectInvestments": "Project Investments",
+      "manageInvestments": "Manage investments made in projects",
+      "noInvestmentsFound": "No investments found",
+      "investmentDetails": "Investment Details",
+      "investmentDetailsDesc": "Detailed information about the investment",
+      "searchPledges": "Search pledges...",
+      "projectPledges": "Project Pledges",
+      "managePledges": "Manage pledges made to projects",
+      "noPledgesFound": "No pledges found",
+      "pledgeDetails": "Pledge Details",
+      "pledgeDetailsDesc": "Detailed information about the pledge"
+    }
+  }
+}

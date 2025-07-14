@@ -1,0 +1,193 @@
+/* Override Radix UI Navigation Menu styles */
+:root {
+  --accent-foreground: inherit !important;
+  --accent: transparent !important;
+  --border: transparent !important;
+  --ring: transparent !important;
+  --ring-offset: transparent !important;
+}
+
+/* Force override navigation menu styles */
+[data-radix-navigation-menu-trigger] {
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-radix-navigation-menu-trigger][data-state="open"] {
+  background-color: transparent !important;
+  color: var(--primary) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-radix-navigation-menu-content] {
+  background: white !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Override Select component styles */
+[data-radix-select-trigger] {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-radix-select-trigger]:hover {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: var(--secondary-200) !important;
+}
+
+[data-radix-select-trigger]:focus {
+  outline: none !important;
+  border-color: var(--secondary-200) !important;
+  box-shadow: none !important;
+  ring: none !important;
+}
+
+[data-radix-select-content] {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: none !important;
+  outline: none !important;
+}
+
+[data-radix-select-item] {
+  color: var(--primary) !important;
+  border: none !important;
+  outline: none !important;
+}
+
+[data-radix-select-item]:hover,
+[data-radix-select-item][data-highlighted] {
+  background: var(--secondary-100) !important;
+  color: var(--primary) !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Override any remaining purple/brown colors */
+*[class*="hover\\:bg-accent"],
+*[class*="active\\:bg-accent"],
+*[class*="focus\\:bg-accent"] {
+  --accent: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
+
+*[class*="text-accent"],
+*[class*="hover\\:text-accent"] {
+  color: var(--primary) !important;
+}
+
+/* Force navigation menu item colors */
+.nav-item,
+.nav-item:hover,
+.nav-item:focus,
+.nav-item[data-state="open"] {
+  background-color: transparent !important;
+  color: var(--primary) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  --ring-offset-width: 0 !important;
+  --ring-offset-color: transparent !important;
+  --ring-color: transparent !important;
+  --ring-offset-shadow: none !important;
+  --ring-shadow: none !important;
+}
+
+.nav-item:hover,
+.nav-item[data-state="open"] {
+  color: var(--primary-500) !important;
+}
+
+/* Remove any focus rings or outlines */
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  --ring-offset-width: 0 !important;
+  --ring-offset-color: transparent !important;
+  --ring-color: transparent !important;
+  --ring-offset-shadow: none !important;
+  --ring-shadow: none !important;
+}
+
+/* Button specific overrides */
+button,
+.button,
+[type="button"],
+[type="submit"],
+[type="reset"] {
+  outline: none !important;
+  box-shadow: none !important;
+  --ring-offset-width: 0 !important;
+  --ring-offset-color: transparent !important;
+  --ring-color: transparent !important;
+  --ring-offset-shadow: none !important;
+  --ring-shadow: none !important;
+}
+
+button:focus,
+.button:focus,
+[type="button"]:focus,
+[type="submit"]:focus,
+[type="reset"]:focus,
+button:active,
+.button:active,
+[type="button"]:active,
+[type="submit"]:active,
+[type="reset"]:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  background-color: inherit !important;
+  --ring-offset-width: 0 !important;
+  --ring-offset-color: transparent !important;
+  --ring-color: transparent !important;
+  --ring-offset-shadow: none !important;
+  --ring-shadow: none !important;
+}
+
+/* Override any hover/focus states that might show yellow */
+*[class*="hover\\:bg-accent"],
+*[class*="focus\\:bg-accent"],
+*[class*="active\\:bg-accent"] {
+  --accent: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Override button focus states */
+button[class*="focus\\:ring"],
+button[class*="focus\\:outline"],
+button[class*="focus\\:border"],
+.button[class*="focus\\:ring"],
+.button[class*="focus\\:outline"],
+.button[class*="focus\\:border"] {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  --ring-offset-width: 0 !important;
+  --ring-offset-color: transparent !important;
+  --ring-color: transparent !important;
+  --ring-offset-shadow: none !important;
+  --ring-shadow: none !important;
+}
+
+/* Ensure no yellow backgrounds on any interactive elements */
+button:not([disabled]):active,
+.button:not([disabled]):active,
+[type="button"]:not([disabled]):active,
+[type="submit"]:not([disabled]):active,
+[type="reset"]:not([disabled]):active {
+  background-color: inherit !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
