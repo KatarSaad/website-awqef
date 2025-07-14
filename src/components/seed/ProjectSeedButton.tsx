@@ -12,7 +12,6 @@ import { useCreateSponsor } from "@/hooks/api/useSponsors";
 import { useCreateInvestment } from "@/hooks/api/useInvestments";
 import { useCreateCategory } from "@/hooks/api/useCategories";
 import { useCreatePledge } from "@/hooks/api/usePledges";
-import { useCreateCertification } from "@/hooks/api/useCertifications";
 import { useCreateFatwa } from "@/hooks/api/useFatwas";
 import { useCreateProjectStep } from "@/hooks/api/useProjectSteps";
 import { CreateFatwaDto } from "@/api/generated/models/CreateFatwaDto";
@@ -44,7 +43,6 @@ export const ProjectSeedButton: React.FC<ProjectSeedButtonProps> = ({
   const createFatwa = useCreateFatwa().mutateAsync;
   const createCategory = useCreateCategory().mutateAsync;
   const createPledge = useCreatePledge().mutateAsync; // projectId will be overridden
-  const createCertification = useCreateCertification().mutateAsync;
   const createProjectStep = useCreateProjectStep(0).mutateAsync; // projectId will be overridden
 
   const seedProjects = async () => {
@@ -151,20 +149,7 @@ export const ProjectSeedButton: React.FC<ProjectSeedButtonProps> = ({
           isConfirmed: true,
         });
         // Certifications (use translation objects)
-        await createCertification({
-          title: {
-            en: `Certification for Project ${i + 1}`,
-            ar: `شهادة للمشروع ${i + 1}`,
-          },
-          issuingBody: { en: "Seeded Cert Body", ar: "جهة الإصدار" },
-          documentUrl: randomUrl(),
-          projectId: project.id,
-          issuedAt: new Date().toISOString(),
-          validUntil: new Date(
-            Date.now() + 365 * 24 * 60 * 60 * 1000
-          ).toISOString(),
-        });
-        // Fatwas
+
         await createFatwa({
           scholarName: { en: "Scholar EN", ar: "عالم AR" },
           summary: { en: "Fatwa summary EN", ar: "ملخص الفتوى AR" },

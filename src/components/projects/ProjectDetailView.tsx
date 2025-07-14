@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ProjectSteps } from "./ProjectSteps";
 import { ProjectInvestments } from "./ProjectInvestments";
-import ProjectCertifications from "./ProjectCertifications";
+import { ProjectCertifications } from "./ProjectCertifications";
 import { ProjectFatwa } from "./ProjectFatwa";
 import {
   Calendar,
