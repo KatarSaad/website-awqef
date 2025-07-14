@@ -1,5 +1,34 @@
 {
-  "buildCommand": "npm install && npm run build",
+  "buildCommand": "next build",
+  "eslint": {
+    "ignoreDuringBuilds": true
+  },
+  "typescript": {
+    "ignoreBuildErrors": true
+  },
+  "devCommand": "next dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
   "outputDirectory": ".next",
-  "installCommand": "npm install"
+  "regions": ["iad1"],
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/careers",
+      "dest": "/api/server-render?path=/careers"
+    },
+    {
+      "src": "/risks",
+      "dest": "/api/server-render?path=/risks"
+    },
+    {
+      "src": "/team",
+      "dest": "/api/server-render?path=/team"
+    }
+  ]
 }

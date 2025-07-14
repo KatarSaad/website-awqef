@@ -5,9 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   typescript: {
-    // !! WARN !!
     // Ignoring TypeScript errors to match development behavior
-    // This is not recommended for production code quality
     ignoreBuildErrors: true,
   },
   eslint: {
@@ -17,13 +15,9 @@ const nextConfig = {
   images: {
     domains: ["images.unsplash.com"],
   },
-  // Disable static optimization for problematic pages
-  output: 'standalone',
-  experimental: {
-    // Disable static generation completely
-    // This will make all pages server-side rendered
-    disableOptimizedLoading: true,
-  },
+  // Completely disable static generation
+  staticPageGenerationTimeout: 1000,
+  distDir: process.env.NODE_ENV === 'development' ? '.next' : '.next',
   webpack: (config) => {
     config.resolve.alias["@"] = path.resolve(__dirname, "src");
     return config;
