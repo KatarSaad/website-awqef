@@ -1,9 +1,6 @@
 {
   "buildCommand": "next build",
 
-  "typescript": {
-    "ignoreBuildErrors": true
-  },
   "devCommand": "next dev",
   "installCommand": "npm install",
   "framework": "nextjs",
