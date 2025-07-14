@@ -15,10 +15,7 @@ import {
   Calendar,
   User,
   Tag,
-<<<<<<< HEAD
-=======
-  FileText
->>>>>>> fc7084d8be839aafc2de939092f780d5d176f07b
+  FileText,
 } from "lucide-react";
 
 interface PostsListProps {
@@ -150,33 +147,24 @@ export const PostsList: React.FC<PostsListProps> = ({
                     <div className="flex items-center gap-2">
                       <Badge
                         variant={post.publishedAt ? "default" : "secondary"}
-                        className={post.publishedAt 
-                          ? "bg-success/10 text-success border-0" 
-                          : "bg-warning/10 text-warning border-0"
+                        className={
+                          post.publishedAt
+                            ? "bg-success/10 text-success border-0"
+                            : "bg-warning/10 text-warning border-0"
                         }
                       >
                         {post.publishedAt ? "Published" : "Draft"}
                       </Badge>
                       {post.isFeatured && (
-<<<<<<< HEAD
                         <Badge
                           variant="outline"
                           className="text-primary border-primary"
                         >
-=======
-                        <Badge variant="outline" className="text-primary border-primary bg-primary/5">
->>>>>>> fc7084d8be839aafc2de939092f780d5d176f07b
                           Featured
                         </Badge>
                       )}
                       {post.tags && post.tags.length > 0 && (
-<<<<<<< HEAD
                         <Badge variant="outline">{post.tags.length} tags</Badge>
-=======
-                        <Badge variant="outline" className="border-border">
-                          {post.tags.length} tags
-                        </Badge>
->>>>>>> fc7084d8be839aafc2de939092f780d5d176f07b
                       )}
                     </div>
 
