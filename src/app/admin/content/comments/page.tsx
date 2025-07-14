@@ -55,19 +55,9 @@ export default function AdminContentComments() {
     refetch,
   } = useQuery({
     queryKey: ["admin", "comments", page, limit, search, activeTab],
-    queryFn: () => Websitem.contentControllerListComments(page, limit, search),
+    queryFn: () =>
+      ContentService.contentControllerListComments(page, limit, search),
   });
-
-  const handleApproveComment = async (id: number) => {
-    try {
-      await ContentService.comm(id);
-      toast.success("Comment approved successfully");
-      refetch();
-    } catch (error) {
-      toast.error("Failed to approve comment");
-      console.error(error);
-    }
-  };
 
   const handleRejectComment = async (id: number) => {
     try {
@@ -236,15 +226,7 @@ export default function AdminContentComments() {
                                 >
                                   <Eye className="mr-2 h-4 w-4" /> View on Post
                                 </DropdownMenuItem>
-                                {comment.status !== "approved" && (
-                                  <DropdownMenuItem
-                                    onClick={() =>
-                                      handleApproveComment(comment.id)
-                                    }
-                                  >
-                                    <Check className="mr-2 h-4 w-4" /> Approve
-                                  </DropdownMenuItem>
-                                )}
+
                                 {comment.status !== "rejected" && (
                                   <DropdownMenuItem
                                     onClick={() =>

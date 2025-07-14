@@ -62,7 +62,6 @@ export default function CreateOrganizationPage() {
 
   // Form
   const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
     defaultValues: {
       name: { en: "", ar: "" },
       description: { en: "", ar: "" },
@@ -75,13 +74,14 @@ export default function CreateOrganizationPage() {
   // Create mutation
   const createMutation = useMutation({
     mutationFn: (data: FormValues) => {
-      return WebsiteOrganizationsService.websiteOrganizationControllerCreateWebsiteOrganization({
-        name: data.name as TranslationDto,
-        description: data.description as TranslationDto,
-        logo: data.logo,
-        tier: data.tier,
-        isVerified: data.isVerified,
-      });
+      return WebsiteOrganizationsService.websiteOrganizationControllerCreateWebsiteOrganization(
+        {
+          name: data.name as TranslationDto,
+          description: data.description as TranslationDto,
+          logo: data.logo,
+          isVerified: data.isVerified,
+        }
+      );
     },
     onSuccess: () => {
       toast.success("Organization created successfully");
@@ -109,7 +109,9 @@ export default function CreateOrganizationPage() {
           >
             <ArrowLeft className="h-4 w-4" />
           </Button>
-          <h1 className="text-3xl font-bold tracking-tight">Create Organization</h1>
+          <h1 className="text-3xl font-bold tracking-tight">
+            Create Organization
+          </h1>
         </div>
       </div>
 
@@ -145,11 +147,7 @@ export default function CreateOrganizationPage() {
                     <FormItem>
                       <FormLabel>Name (Arabic)</FormLabel>
                       <FormControl>
-                        <Input
-                          placeholder="اسم المنظمة"
-                          {...field}
-                          dir="rtl"
-                        />
+                        <Input placeholder="اسم المنظمة" {...field} dir="rtl" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -200,7 +198,10 @@ export default function CreateOrganizationPage() {
                     <FormItem>
                       <FormLabel>Logo URL</FormLabel>
                       <FormControl>
-                        <Input placeholder="https://example.com/logo.png" {...field} />
+                        <Input
+                          placeholder="https://example.com/logo.png"
+                          {...field}
+                        />
                       </FormControl>
                       <FormDescription>
                         Enter the URL of the organization's logo

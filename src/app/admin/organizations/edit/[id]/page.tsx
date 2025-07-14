@@ -66,13 +66,15 @@ export default function EditOrganizationPage() {
   // Fetch organization data
   const { data: organization, isLoading } = useQuery({
     queryKey: ["organization", id],
-    queryFn: () => WebsiteOrganizationsService.websiteOrganizationControllerGetWebsiteOrganization(id),
+    queryFn: () =>
+      WebsiteOrganizationsService.websiteOrganizationControllerGetWebsiteOrganization(
+        id
+      ),
     enabled: !!id,
   });
 
   // Form
   const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
     defaultValues: {
       name: { en: "", ar: "" },
       description: { en: "", ar: "" },
@@ -150,7 +152,9 @@ export default function EditOrganizationPage() {
           >
             <ArrowLeft className="h-4 w-4" />
           </Button>
-          <h1 className="text-3xl font-bold tracking-tight">Edit Organization</h1>
+          <h1 className="text-3xl font-bold tracking-tight">
+            Edit Organization
+          </h1>
         </div>
       </div>
 
@@ -186,11 +190,7 @@ export default function EditOrganizationPage() {
                     <FormItem>
                       <FormLabel>Name (Arabic)</FormLabel>
                       <FormControl>
-                        <Input
-                          placeholder="اسم المنظمة"
-                          {...field}
-                          dir="rtl"
-                        />
+                        <Input placeholder="اسم المنظمة" {...field} dir="rtl" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -241,7 +241,10 @@ export default function EditOrganizationPage() {
                     <FormItem>
                       <FormLabel>Logo URL</FormLabel>
                       <FormControl>
-                        <Input placeholder="https://example.com/logo.png" {...field} />
+                        <Input
+                          placeholder="https://example.com/logo.png"
+                          {...field}
+                        />
                       </FormControl>
                       <FormDescription>
                         Enter the URL of the organization's logo

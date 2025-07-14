@@ -88,7 +88,7 @@ export default function AdminContentPosts() {
   // Fetch categories for filtering and post creation/editing
   const { data: categoriesData } = useQuery({
     queryKey: ["admin", "categories"],
-    queryFn: () => CategoryService.categoryControllerListCategories("content"),
+    queryFn: () => CategoryService.categoryControllerListCategories(),
   });
 
   const createPostMutation = useCreatePost();
