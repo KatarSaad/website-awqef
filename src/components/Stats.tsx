@@ -29,7 +29,7 @@ const Stats = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-4 text-primary">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
             Trusted Globally
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -74,7 +74,7 @@ const StatCard: React.FC<StatCardProps> = ({ stat, index, isInView }) => {
       transition={{ duration: 0.8, delay: index * 0.2 }}
       className="text-center p-8 rounded-2xl bg-gradient-to-br from-primary-100 to-secondary-100 shadow-lg hover:shadow-xl transition-all duration-300"
     >
-      <div className="text-4xl md:text-5xl font-bold text-emerald-900 mb-4 text-primary">
+      <div className="text-4xl md:text-5xl font-bold mb-4 text-primary">
         {stat.prefix}
         {count.toLocaleString()}
         {stat.suffix}

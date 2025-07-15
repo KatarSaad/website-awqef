@@ -32,6 +32,7 @@ import {
   ArrowRight,
   LayoutGrid,
   List,
+  Badge,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -52,7 +53,7 @@ export const EnhancedBlogList: React.FC<EnhancedBlogListProps> = ({
   showPagination = true,
   layout: initialLayout = "feed",
 }) => {
-  const { t, isRTL } = useLanguage();
+  const { t, isRTL, language } = useLanguage();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>(
     categoryId?.toString() || ""
@@ -61,6 +62,14 @@ export const EnhancedBlogList: React.FC<EnhancedBlogListProps> = ({
   const [activeTab, setActiveTab] = useState("recent");
   const [layout, setLayout] = useState<"grid" | "list" | "feed">(initialLayout);
   const [debouncedSearch, setDebouncedSearch] = useState("");
+
+  // Helper function to get translated text
+  const getTranslatedText = (field: any) => {
+    if (!field) return "";
+    if (typeof field === "string") return field;
+    if (typeof field === "object" && field[language]) return field[language];
+    return field.en || Object.values(field)[0] || "";
+  };
 
   // Debounce search term
   useEffect(() => {
@@ -358,10 +367,7 @@ export const EnhancedBlogList: React.FC<EnhancedBlogListProps> = ({
                           variant="outline"
                           className="text-primary-600 border-primary-200"
                         >
-                          {typeof post.category.name === "object"
-                            ? post.category.name.en ||
-                              Object.values(post.category.name)[0]
-                            : post.category.name}
+                          {getTranslatedText(post.category.name)}
                         </Badge>
                       )}
                     </div>
@@ -369,15 +375,10 @@ export const EnhancedBlogList: React.FC<EnhancedBlogListProps> = ({
                     {/* Content */}
                     <div className="mb-4">
                       <h3 className="text-xl font-bold text-gray-900 mb-3">
-                        {typeof post.title === "object"
-                          ? post.title.en || Object.values(post.title)[0]
-                          : post.title}
+                        {getTranslatedText(post.title)}
                       </h3>
                       <p className="text-gray-600">
-                        {typeof post.excerpt === "object"
-                          ? post.excerpt.en ||
-                            Object.values(post.excerpt || {})[0]
-                          : post.excerpt}
+                        {getTranslatedText(post.excerpt)}
                       </p>
                     </div>
 
@@ -386,11 +387,7 @@ export const EnhancedBlogList: React.FC<EnhancedBlogListProps> = ({
                       <div className="rounded-lg overflow-hidden mb-4 max-h-96">
                         <img
                           src={post.featuredImage}
-                          alt={
-                            typeof post.title === "object"
-                              ? post.title.en || Object.values(post.title)[0]
-                              : post.title
-                          }
+                          alt={getTranslatedText(post.title)}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -468,12 +465,12 @@ export const EnhancedBlogList: React.FC<EnhancedBlogListProps> = ({
           )}
 
           {/* Pagination */}
-          {showPagination && (
-            layout === "feed" ? (
+          {showPagination &&
+            (layout === "feed" ? (
               // Infinite scroll style pagination for feed layout
               <div className="mt-8 text-center">
-                <Button 
-                  onClick={() => setCurrentPage(prev => prev + 1)}
+                <Button
+                  onClick={() => setCurrentPage((prev) => prev + 1)}
                   disabled={currentPage >= totalPages || isLoading}
                   variant="outline"
                   className="w-full max-w-md py-6"
@@ -523,7 +520,9 @@ export const EnhancedBlogList: React.FC<EnhancedBlogListProps> = ({
                       return (
                         <Button
                           key={i}
-                          variant={currentPage === pageNum ? "default" : "ghost"}
+                          variant={
+                            currentPage === pageNum ? "default" : "ghost"
+                          }
                           size="sm"
                           onClick={() => setCurrentPage(pageNum)}
                           className={`h-8 w-8 p-0 ${
@@ -551,8 +550,7 @@ export const EnhancedBlogList: React.FC<EnhancedBlogListProps> = ({
                   </div>
                 </div>
               )
-            )
-          )}
+            ))}
         </>
       )}
     </div>

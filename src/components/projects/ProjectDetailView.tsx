@@ -135,8 +135,24 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
   };
 
   const updatedAt = project.updatedAt || project.createdAt || "";
-  const featuredImage =
-    (project as any).featuredImage || "/placeholder-project.jpg";
+  
+  // Generate random related image URL if none is provided
+  const getRandomProjectImage = () => {
+    const categories = {
+      "1": "realestate",
+      "2": "technology",
+      "3": "healthcare",
+      "4": "education",
+      "5": "energy",
+      "6": "finance"
+    };
+    
+    const categoryName = project.category?.id ? categories[project.category.id] || "business" : "business";
+    const randomNum = Math.floor(Math.random() * 10) + 1;
+    return `https://source.unsplash.com/800x600/?${categoryName},investment,${randomNum}`;
+  };
+  
+  const featuredImage = (project as any).featuredImage || getRandomProjectImage();
   const investments = project.investments || [];
   const certifications = project.certifications || [];
 
@@ -224,6 +240,8 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
                 alt={getTranslatedText(project.title)}
                 className="w-full h-full object-cover"
               />
+              {/* Add a subtle overlay for better text contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
 
             {/* Tabs */}
@@ -440,7 +458,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
               </div>
 
               <div className="mt-6 space-y-3">
-                <Button className="w-full bg-primary-600 hover:bg-primary-700 text-white py-6 text-lg">
+                <Button className="w-full bg-primary-600 hover:bg-primary-700 text-white py-6 text-lg font-semibold">
                   {t("projects.investNow") || "Invest Now"}
                 </Button>
                 <div className="flex gap-2">

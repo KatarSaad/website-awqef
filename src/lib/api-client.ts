@@ -66,6 +66,7 @@ class ApiClient {
     const token = AuthService.getToken();
     const headers = {
       "Content-Type": "application/json",
+      "X-API-Token": "awqef-api-token-123456", // Adding static token to header
       ...options.headers,
     };
 

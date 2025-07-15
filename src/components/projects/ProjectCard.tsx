@@ -69,8 +69,23 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     }
   };
 
-  // Placeholder image if none is provided
-  const featuredImage = (project as any).featuredImage || "/placeholder-project.jpg";
+  // Generate random related image URL if none is provided
+  const getRandomProjectImage = () => {
+    const categories = {
+      "1": "realestate",
+      "2": "technology",
+      "3": "healthcare",
+      "4": "education",
+      "5": "energy",
+      "6": "finance"
+    };
+    
+    const categoryName = project.category?.id ? categories[project.category.id] || "business" : "business";
+    const randomNum = Math.floor(Math.random() * 10) + 1;
+    return `https://source.unsplash.com/800x600/?${categoryName},investment,${randomNum}`;
+  };
+  
+  const featuredImage = (project as any).featuredImage || getRandomProjectImage();
 
   return (
     <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group card-hover">
@@ -167,7 +182,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
         {/* Action Button */}
         <Button
-          className="w-full bg-primary hover:bg-primary-700 group"
+          className="w-full bg-primary hover:bg-primary-700 group text-white"
           onClick={() => onViewProject?.(project.id)}
         >
           <span>{t("projects.learnMore") || "Learn More"}</span>

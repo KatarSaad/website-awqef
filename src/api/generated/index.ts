@@ -1,108 +1,149 @@
+/* generated using openapi-typescript-codegen -- do not edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export { ApiError } from './core/ApiError';
+export { CancelablePromise, CancelError } from './core/CancelablePromise';
+export { OpenAPI } from './core/OpenAPI';
+export type { OpenAPIConfig } from './core/OpenAPI';
 
-// Generated API types and exports
-export interface PostResponseDto {
-  id: number;
-  title: string | { en: string; ar: string };
-  content: string | { en: string; ar: string };
-  excerpt: string | { en: string; ar: string };
-  slug: string;
-  featuredImage?: string;
-  status: 'DRAFT' | 'PUBLISHED' | 'SCHEDULED' | 'ARCHIVED';
-  type: 'BLOG' | 'NEWS' | 'EVENT' | 'PAGE';
-  publishedAt?: string;
-  createdAt: string;
-  updatedAt: string;
-  views: number;
-  likes: number;
-  shares: number;
-  author: {
-    id: number;
-    first_name: string;
-    family_name: string;
-    avatar?: string;
-  };
-  category?: {
-    id: number;
-    name: string | { en: string; ar: string };
-    slug: string;
-  };
-  tags: Array<{
-    id: number;
-    name: string;
-    slug: string;
-  }>;
-  comments: Array<{
-    id: number;
-    content: string;
-    author: string;
-    createdAt: string;
-  }>;
-  isFeatured: boolean;
-  readTime: number;
-}
+export type { AddressDto } from './models/AddressDto';
+export type { BeneficiaryDto } from './models/BeneficiaryDto';
+export type { CategoryDto } from './models/CategoryDto';
+export type { CategoryResponseDto } from './models/CategoryResponseDto';
+export type { CertificationResponseDto } from './models/CertificationResponseDto';
+export type { CombinedResponseDto } from './models/CombinedResponseDto';
+export type { CombinedStatsDto } from './models/CombinedStatsDto';
+export type { CommentDto } from './models/CommentDto';
+export type { ContactDto } from './models/ContactDto';
+export type { ContactFormDto } from './models/ContactFormDto';
+export type { ContentReferenceResponseDto } from './models/ContentReferenceResponseDto';
+export type { CreateCategoryDto } from './models/CreateCategoryDto';
+export type { CreateCertificationDto } from './models/CreateCertificationDto';
+export type { CreateCommentDto } from './models/CreateCommentDto';
+export { CreateContentReferenceDto } from './models/CreateContentReferenceDto';
+export type { CreateFaqDto } from './models/CreateFaqDto';
+export { CreateFatwaDto } from './models/CreateFatwaDto';
+export type { CreateInvestmentDto } from './models/CreateInvestmentDto';
+export type { CreateLiquidityItemDto } from './models/CreateLiquidityItemDto';
+export type { CreateOrganizationDto } from './models/CreateOrganizationDto';
+export type { CreateOrganizationMemberDto } from './models/CreateOrganizationMemberDto';
+export type { CreatePledgeDto } from './models/CreatePledgeDto';
+export { CreatePostDto } from './models/CreatePostDto';
+export { CreateProjectDto } from './models/CreateProjectDto';
+export type { CreateProjectStepDto } from './models/CreateProjectStepDto';
+export type { CreateRatingDto } from './models/CreateRatingDto';
+export type { CreateReservationDto } from './models/CreateReservationDto';
+export { CreateSectionDto } from './models/CreateSectionDto';
+export type { CreateShareLogDto } from './models/CreateShareLogDto';
+export type { CreateSponsorDto } from './models/CreateSponsorDto';
+export type { CreateStatisticDto } from './models/CreateStatisticDto';
+export { CreateSupportTicketDto } from './models/CreateSupportTicketDto';
+export type { CreateWebsiteCommentDto } from './models/CreateWebsiteCommentDto';
+export { CreateWebsiteOrganizationDto } from './models/CreateWebsiteOrganizationDto';
+export type { CustomerLiquidityDto } from './models/CustomerLiquidityDto';
+export type { CustomerLiquidityFieldItemDto } from './models/CustomerLiquidityFieldItemDto';
+export type { CustomerLiquidityItemDto } from './models/CustomerLiquidityItemDto';
+export type { CustomerSectionDto } from './models/CustomerSectionDto';
+export type { CustomerUpdateEndowmentDto } from './models/CustomerUpdateEndowmentDto';
+export { DatesStatsDto } from './models/DatesStatsDto';
+export type { EmailAuthenticationDto } from './models/EmailAuthenticationDto';
+export type { EndowmentTemplateDto } from './models/EndowmentTemplateDto';
+export type { EndowmentTemplateSectionDto } from './models/EndowmentTemplateSectionDto';
+export type { EndowmentTemplateStepDto } from './models/EndowmentTemplateStepDto';
+export type { EventEntity } from './models/EventEntity';
+export type { FaqResponseDto } from './models/FaqResponseDto';
+export { FatwaResponseDto } from './models/FatwaResponseDto';
+export type { FileDto } from './models/FileDto';
+export type { ForgotPasswordDto } from './models/ForgotPasswordDto';
+export type { GroupedStatsWithTotalsDto } from './models/GroupedStatsWithTotalsDto';
+export type { IdNumberAuthenticationDto } from './models/IdNumberAuthenticationDto';
+export type { ImportReservationsDto } from './models/ImportReservationsDto';
+export type { InputFieldDto } from './models/InputFieldDto';
+export type { InputMenuDto } from './models/InputMenuDto';
+export type { InvestmentResponseDto } from './models/InvestmentResponseDto';
+export { LiquidityFieldInputType } from './models/LiquidityFieldInputType';
+export type { ManagementFetchUserResponse } from './models/ManagementFetchUserResponse';
+export type { MassarefBeneficiaryDto } from './models/MassarefBeneficiaryDto';
+export type { MassarefSectionDto } from './models/MassarefSectionDto';
+export type { MultiSelectDto } from './models/MultiSelectDto';
+export type { OrganizationMemberResponseDto } from './models/OrganizationMemberResponseDto';
+export type { OtpVerifyDto } from './models/OtpVerifyDto';
+export type { PaginatedResponseDto } from './models/PaginatedResponseDto';
+export type { PhoneAuthenticationDto } from './models/PhoneAuthenticationDto';
+export type { PledgeResponseDto } from './models/PledgeResponseDto';
+export { PostResponseDto } from './models/PostResponseDto';
+export { ProjectResponseDto } from './models/ProjectResponseDto';
+export type { ProjectStepResponseDto } from './models/ProjectStepResponseDto';
+export type { RatingDto } from './models/RatingDto';
+export type { RatingResponseDto } from './models/RatingResponseDto';
+export type { RefreshTokenDto } from './models/RefreshTokenDto';
+export type { RegisterDto } from './models/RegisterDto';
+export type { RegisterOrganizationDto } from './models/RegisterOrganizationDto';
+export type { SectionResponseDto } from './models/SectionResponseDto';
+export type { ShareLogResponseDto } from './models/ShareLogResponseDto';
+export { SourceStatsDto } from './models/SourceStatsDto';
+export type { SponsorResponseDto } from './models/SponsorResponseDto';
+export type { StatisticResponseDto } from './models/StatisticResponseDto';
+export type { StatsResponseDto } from './models/StatsResponseDto';
+export type { StringIds } from './models/StringIds';
+export type { SupportTicketDto } from './models/SupportTicketDto';
+export { TicketTypeEnum } from './models/TicketTypeEnum';
+export type { TokenResponseDto } from './models/TokenResponseDto';
+export type { TranslationDto } from './models/TranslationDto';
+export type { TranslationEntity } from './models/TranslationEntity';
+export type { UpdateCertificationDto } from './models/UpdateCertificationDto';
+export { UpdateFatwaDto } from './models/UpdateFatwaDto';
+export type { UpdateInvestmentDto } from './models/UpdateInvestmentDto';
+export type { UpdateLiquidityItemDto } from './models/UpdateLiquidityItemDto';
+export type { UpdateOrganizationDto } from './models/UpdateOrganizationDto';
+export type { UpdateOrganizationMemberDto } from './models/UpdateOrganizationMemberDto';
+export type { UpdatePledgeDto } from './models/UpdatePledgeDto';
+export { UpdatePostDto } from './models/UpdatePostDto';
+export { UpdateProjectDto } from './models/UpdateProjectDto';
+export type { UpdateProjectStepDto } from './models/UpdateProjectStepDto';
+export type { UpdateReservationDto } from './models/UpdateReservationDto';
+export type { UpdateSponsorDto } from './models/UpdateSponsorDto';
+export { UpdateSupportTicketDto } from './models/UpdateSupportTicketDto';
+export { UpdateSupportTicketStatusDto } from './models/UpdateSupportTicketStatusDto';
+export type { UpdateWebsiteCommentDto } from './models/UpdateWebsiteCommentDto';
+export { UpdateWebsiteOrganizationDto } from './models/UpdateWebsiteOrganizationDto';
+export type { UserDto } from './models/UserDto';
+export type { UserEntity } from './models/UserEntity';
+export type { ValidateTokenDto } from './models/ValidateTokenDto';
+export type { WebsiteCommentDto } from './models/WebsiteCommentDto';
+export type { WebsiteCommentResponseDto } from './models/WebsiteCommentResponseDto';
+export { WebsiteOrganizationResponseDto } from './models/WebsiteOrganizationResponseDto';
 
-export interface CreatePostDto {
-  title: string | { en: string; ar: string };
-  content: string | { en: string; ar: string };
-  excerpt?: string | { en: string; ar: string };
-  slug: string;
-  featuredImage?: string;
-  status: 'DRAFT' | 'PUBLISHED' | 'SCHEDULED';
-  type: 'BLOG' | 'NEWS' | 'EVENT' | 'PAGE';
-  publishedAt?: string;
-  categoryId?: number;
-  tags?: string[];
-  isFeatured?: boolean;
-}
-
-export interface UpdatePostDto extends Partial<CreatePostDto> {}
-
-export interface WebsiteCommentResponseDto {
-  id: number;
-  content: string;
-  author: string;
-  email: string;
-  postId: number;
-  parentId?: number;
-  status: 'PENDING' | 'APPROVED' | 'REJECTED';
-  createdAt: string;
-  replies: WebsiteCommentResponseDto[];
-}
-
-export interface CreateWebsiteCommentDto {
-  content: string;
-  author: string;
-  email: string;
-  postId: number;
-  parentId?: number;
-}
-
-export interface UpdateWebsiteCommentDto extends Partial<CreateWebsiteCommentDto> {
-  status?: 'PENDING' | 'APPROVED' | 'REJECTED';
-}
-
-export interface RatingResponseDto {
-  id: number;
-  rating: number;
-  postId: number;
-  userId?: number;
-  createdAt: string;
-}
-
-export interface CreateRatingDto {
-  rating: number;
-  postId: number;
-}
-
-export interface ShareLogResponseDto {
-  id: number;
-  platform: string;
-  postId: number;
-  userId?: number;
-  createdAt: string;
-}
-
-export interface CreateShareLogDto {
-  platform: string;
-  postId: number;
-}
+export { AuthService } from './services/AuthService';
+export { BackofficeDashboardStatisticsService } from './services/BackofficeDashboardStatisticsService';
+export { BackofficeEndowmentTemplatesCustomerEndowmentsService } from './services/BackofficeEndowmentTemplatesCustomerEndowmentsService';
+export { BackofficeLiquiditiesService } from './services/BackofficeLiquiditiesService';
+export { BackofficeManagementService } from './services/BackofficeManagementService';
+export { CategoryService } from './services/CategoryService';
+export { CertificationsService } from './services/CertificationsService';
+export { ContentService } from './services/ContentService';
+export { ContentReferenceService } from './services/ContentReferenceService';
+export { CustomerEndowmentsService } from './services/CustomerEndowmentsService';
+export { CustomerLiquiditiesService } from './services/CustomerLiquiditiesService';
+export { DefaultService } from './services/DefaultService';
+export { EventsService } from './services/EventsService';
+export { FaqService } from './services/FaqService';
+export { FatwasService } from './services/FatwasService';
+export { InvestmentsService } from './services/InvestmentsService';
+export { OrganizationMembersService } from './services/OrganizationMembersService';
+export { OrganizationsService } from './services/OrganizationsService';
+export { PdfGeneratorService } from './services/PdfGeneratorService';
+export { PledgesService } from './services/PledgesService';
+export { ProjectService } from './services/ProjectService';
+export { ProjectsService } from './services/ProjectsService';
+export { ProjectStepsService } from './services/ProjectStepsService';
+export { ReservationsService } from './services/ReservationsService';
+export { SectionService } from './services/SectionService';
+export { SeedsService } from './services/SeedsService';
+export { SmsService } from './services/SmsService';
+export { SponsorsService } from './services/SponsorsService';
+export { StatisticService } from './services/StatisticService';
+export { SupportTicketsService } from './services/SupportTicketsService';
+export { UsersService } from './services/UsersService';
+export { WebsiteOrganizationsService } from './services/WebsiteOrganizationsService';

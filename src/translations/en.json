@@ -45,7 +45,8 @@
     "actions": "Actions",
     "user": "User",
     "report": "Report",
-    "settings": "Settings"
+    "settings": "Settings",
+    "close": "Close"
   },
   "blog": {
     "title": "Blog",

@@ -43,7 +43,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Helper function to get translated text
-const getTranslatedText = (field: any, language: string) => {
+export const getTranslatedText = (field: any, language: string) => {
   if (!field) return "";
   if (typeof field === "string") return field;
   if (typeof field === "object" && field[language]) return field[language];

@@ -27,11 +27,11 @@ const Sponsors = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-4 text-primary">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
             {t("sponsors.title")}
           </h2>
           <h3
-            className="text-2xl md:text-3xl font-light text-emerald-700 mb-6 text-primary"
+            className="text-2xl md:text-3xl font-light mb-6 text-primary"
             dir={language === "ar" ? "rtl" : "ltr"}
           >
             {t("sponsors.subtitle")}
@@ -72,21 +72,21 @@ const Sponsors = () => {
         >
           <div className="text-center">
             <div className="text-3xl mb-4">🛡️</div>
-            <h4 className="text-lg font-bold text-emerald-900 mb-2">
+            <h4 className="text-lg font-bold text-primary mb-2">
               {t("sponsors.trust.1.title")}
             </h4>
             <p className="text-gray-600">{t("sponsors.trust.1.desc")}</p>
           </div>
           <div className="text-center">
             <div className="text-3xl mb-4">📋</div>
-            <h4 className="text-lg font-bold text-emerald-900 mb-2">
+            <h4 className="text-lg font-bold text-primary mb-2">
               {t("sponsors.trust.2.title")}
             </h4>
             <p className="text-gray-600">{t("sponsors.trust.2.desc")}</p>
           </div>
           <div className="text-center">
             <div className="text-3xl mb-4">🌍</div>
-            <h4 className="text-lg font-bold text-emerald-900 mb-2">
+            <h4 className="text-lg font-bold text-primary mb-2">
               {t("sponsors.trust.3.title")}
             </h4>
             <p className="text-gray-600">{t("sponsors.trust.3.desc")}</p>

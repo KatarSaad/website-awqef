@@ -25,7 +25,7 @@ const WhoWeAre = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 w-full">
+    <section className="py-24 bg-gray-50 w-full">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -34,15 +34,12 @@ const WhoWeAre = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-4 text-primary">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary">
             {t("whoWeAre.title")}
           </h2>
-          <h3
-            className="text-2xl md:text-3xl font-light text-emerald-700 mb-6 text-primary"
-            dir={language === "ar" ? "rtl" : "ltr"}
-          >
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6 leading-relaxed">
             {t("whoWeAre.subtitle")}
-          </h3>
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -56,10 +53,10 @@ const WhoWeAre = () => {
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="text-4xl mb-4 text-center">{feature.icon}</div>
-              <h4 className="text-xl font-bold text-emerald-900 mb-2 text-center text-primary">
+              <h4 className="text-xl font-bold mb-2 text-center text-primary">
                 {feature.title}
               </h4>
-              <p className="text-gray-600 text-center mb-4">
+              <p className="text-gray-600 text-center mb-4 leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

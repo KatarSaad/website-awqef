@@ -53,11 +53,11 @@ const Timeline = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-4 text-primary">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
             {t("timeline.title")}
           </h2>
           <h3
-            className="text-2xl md:text-3xl font-light text-emerald-700 mb-6 text-primary"
+            className="text-2xl md:text-3xl font-light mb-6 text-primary"
             dir={language === "ar" ? "rtl" : "ltr"}
           >
             {t("timeline.subtitle")}
@@ -94,10 +94,10 @@ const Timeline = () => {
                 >
                   <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-emerald-100">
                     <div className="text-6xl mb-4">{step.icon}</div>
-                    <div className="text-emerald-600 font-bold text-lg mb-2 text-primary">
+                    <div className="font-bold text-lg mb-2 text-primary">
                       {t("timeline.step")} {step.number}
                     </div>
-                    <h3 className="text-2xl font-bold text-emerald-900 mb-2 text-primary">
+                    <h3 className="text-2xl font-bold mb-2 text-primary">
                       {step.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed mb-4">

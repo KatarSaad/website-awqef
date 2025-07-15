@@ -295,7 +295,7 @@ export const OrganizationDetailModal: React.FC<OrganizationDetailModalProps> = (
           >
             {t("common.close") || "Close"}
           </Button>
-          <Button className="bg-primary-600 hover:bg-primary-700">
+          <Button className="bg-primary-600 hover:bg-primary-700 text-white">
             {t("organizations.viewProjects") || "View Projects"}
             <ExternalLink size={16} className="ml-2" />
           </Button>

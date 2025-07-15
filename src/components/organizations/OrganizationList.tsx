@@ -119,7 +119,7 @@ const OrganizationCard: React.FC<OrganizationCardProps> = ({
 
         {/* Action */}
         <Button 
-          className="w-full bg-primary-600 hover:bg-primary-700 flex items-center justify-center"
+          className="w-full bg-primary-600 hover:bg-primary-700 text-white flex items-center justify-center"
           onClick={() => onViewDetails(organization)}
         >
           {t("organizations.viewDetails")}

@@ -50,11 +50,11 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             {t("testimonials.title")}
           </h2>
           <h3
-            className="text-2xl md:text-3xl font-light text-primary-700 mb-6"
+            className="text-2xl md:text-3xl font-light text-primary mb-6"
             dir={language === "ar" ? "rtl" : "ltr"}
           >
             {t("testimonials.subtitle")}
@@ -86,7 +86,7 @@ const Testimonials = () => {
                   className="w-16 h-16 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h4 className="font-bold text-primary-900">
+                  <h4 className="font-bold text-primary">
                     {testimonial.name}
                   </h4>
                   <p className="text-grey-600 text-sm">

@@ -36,4 +36,37 @@ export class SeedsService {
             url: '/v1/seeds/run',
         });
     }
+    /**
+     * Seed content module data
+     * @returns any
+     * @throws ApiError
+     */
+    public static seedControllerSeedContent(): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/v1/seeds/content',
+        });
+    }
+    /**
+     * Seed project module data
+     * @returns any
+     * @throws ApiError
+     */
+    public static seedControllerSeedProject(): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/v1/seeds/project',
+        });
+    }
+    /**
+     * Seed all modules
+     * @returns any
+     * @throws ApiError
+     */
+    public static seedControllerSeedAll(): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/v1/seeds/all',
+        });
+    }
 }

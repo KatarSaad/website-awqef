@@ -65,14 +65,14 @@ const Hero = () => {
           >
             <Button
               size="lg"
-              className="shadow-lg hover:shadow-xl bg-secondary-200 text-primary hover:text-secondary "
+              className="shadow-lg hover:shadow-xl bg-secondary-200 text-primary hover:text-secondary text-white"
             >
               {t("hero.startInvesting")}
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="shadow-lg hover:shadow-xl bg-secondary-200 hover:text-secondary"
+              className="shadow-lg hover:shadow-xl bg-secondary-200 hover:text-secondary text-white"
             >
               {t("hero.learnMore")}
             </Button>
