@@ -705,6 +705,24 @@
     "title": "Risk Disclosure",
     "content": "This is the Risk Disclosure section. Add your translated content here."
   },
+  "login": {
+    "title": "Sign In",
+    "subtitle": "Welcome back to Awqef Investment Platform",
+    "email": "Email Address",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create an account",
+    "orContinueWith": "Or continue with",
+    "error": {
+      "invalidCredentials": "Invalid email or password",
+      "emailRequired": "Email is required",
+      "passwordRequired": "Password is required",
+      "serverError": "Server error. Please try again later."
+    }
+  },
   "footer": {
     "platform": {
       "title": "Platform",
