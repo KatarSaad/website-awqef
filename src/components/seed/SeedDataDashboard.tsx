@@ -11,10 +11,10 @@ export const SeedDataDashboard: React.FC = () => {
   const handleSeedAll = async () => {
     try {
       toast.loading("Seeding all data...");
+      
       const response = await SeedsService.seedControllerSeedAll();
-      const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "";
-
-      if (!response.ok) {
+      
+      if (!response) {
         throw new Error("Failed to seed data");
       }
 

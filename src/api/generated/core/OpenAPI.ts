@@ -21,10 +21,14 @@ export type OpenAPIConfig = {
   ENCODE_PATH?: ((path: string) => string) | undefined;
 };
 
+// Determine if we're in production based on the API URL
+const isProduction = typeof window !== 'undefined' && 
+  process.env.NEXT_PUBLIC_API_BASE_URL?.includes('api.awqef.sa');
+
 export const OpenAPI: OpenAPIConfig = {
   BASE: process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8888",
   VERSION: "1.0",
-  WITH_CREDENTIALS: false,
+  WITH_CREDENTIALS: isProduction,
   CREDENTIALS: "include",
   TOKEN:
     typeof window !== "undefined"
@@ -32,8 +36,8 @@ export const OpenAPI: OpenAPIConfig = {
       : "",
   USERNAME: undefined,
   PASSWORD: undefined,
-  HEADERS: {
-    'Referrer-Policy': 'no-referrer',
-  },
+  HEADERS: isProduction ? {
+    'Content-Type': 'application/json',
+  } : undefined,
   ENCODE_PATH: undefined,
 };
