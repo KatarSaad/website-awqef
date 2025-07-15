@@ -21,23 +21,28 @@ export type OpenAPIConfig = {
   ENCODE_PATH?: ((path: string) => string) | undefined;
 };
 
-// Determine if we're in production based on the API URL
-const isProduction = typeof window !== 'undefined' && 
-  process.env.NEXT_PUBLIC_API_BASE_URL?.includes('api.awqef.sa');
-
 export const OpenAPI: OpenAPIConfig = {
   BASE: process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8888",
   VERSION: "1.0",
-  WITH_CREDENTIALS: isProduction,
-  CREDENTIALS: "include",
+  WITH_CREDENTIALS: false,
+  CREDENTIALS: "same-origin",
   TOKEN:
     typeof window !== "undefined"
       ? window.localStorage.getItem(TOKEN_KEY) || ""
       : "",
   USERNAME: undefined,
   PASSWORD: undefined,
-  HEADERS: isProduction ? {
-    'Content-Type': 'application/json',
-  } : undefined,
+  HEADERS: () => {
+    // Get the token from localStorage
+    const token = typeof window !== "undefined" ? window.localStorage.getItem(TOKEN_KEY) || "" : "";
+    
+    // Return headers with Authorization if token exists
+    return token ? {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    } : {
+      'Content-Type': 'application/json'
+    };
+  },
   ENCODE_PATH: undefined,
 };
