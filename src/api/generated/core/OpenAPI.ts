@@ -32,6 +32,8 @@ export const OpenAPI: OpenAPIConfig = {
       : "",
   USERNAME: undefined,
   PASSWORD: undefined,
-  HEADERS: undefined,
+  HEADERS: {
+    'Referrer-Policy': 'no-referrer',
+  },
   ENCODE_PATH: undefined,
 };

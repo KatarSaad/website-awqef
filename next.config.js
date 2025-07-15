@@ -24,6 +24,20 @@ const nextConfig = {
     serverMinification: false,
     serverSourceMaps: false,
   },
+  // Add security headers including Referrer-Policy
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Referrer-Policy',
+            value: 'no-referrer',
+          },
+        ],
+      },
+    ];
+  },
   webpack: (config) => {
     config.resolve.alias["@"] = path.resolve(__dirname, "src");
     return config;

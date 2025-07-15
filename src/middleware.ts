@@ -22,7 +22,10 @@ export function middleware(request: NextRequest) {
   
   // Allow public paths
   if (PUBLIC_PATHS.some((path) => pathname.startsWith(path))) {
-    return NextResponse.next();
+    const response = NextResponse.next();
+    // Add Referrer-Policy header
+    response.headers.set('Referrer-Policy', 'no-referrer');
+    return response;
   }
 
   // Check for token in cookies
@@ -33,11 +36,17 @@ export function middleware(request: NextRequest) {
     // No token found, redirect to login
     const url = new URL("/login", request.url);
     url.searchParams.set("from", pathname);
-    return NextResponse.redirect(url);
+    const response = NextResponse.redirect(url);
+    // Add Referrer-Policy header
+    response.headers.set('Referrer-Policy', 'no-referrer');
+    return response;
   }
   
   // Token exists, allow the request but let client-side handle validation
-  return NextResponse.next();
+  const response = NextResponse.next();
+  // Add Referrer-Policy header
+  response.headers.set('Referrer-Policy', 'no-referrer');
+  return response;
 }
 
 // Match all routes except static assets and API routes

@@ -146,6 +146,7 @@ export const getHeaders = async (config: OpenAPIConfig, options: ApiRequestOptio
 
     const headers = Object.entries({
         Accept: 'application/json',
+        'Referrer-Policy': 'no-referrer',
         ...additionalHeaders,
         ...options.headers,
     })
@@ -208,6 +209,7 @@ export const sendRequest = async (
         body: body ?? formData,
         method: options.method,
         signal: controller.signal,
+        referrerPolicy: 'no-referrer',
     };
 
     if (config.WITH_CREDENTIALS) {
