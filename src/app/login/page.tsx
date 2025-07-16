@@ -10,6 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { AuthService } from "@/api/generated";
 
 export default function LoginPage() {
   const { t, language, isRTL } = useLanguage();
@@ -38,23 +39,20 @@ export default function LoginPage() {
 
     try {
       // Replace with your actual authentication logic
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password, rememberMe }),
+      const response = await AuthService.authenticationControllerLogin({
+        email,
+        password,
       });
 
-      if (!response.ok) {
+      if (!response.user) {
         throw new Error(t("login.error.invalidCredentials"));
       }
 
-      const data = await response.json();
+      const data = await response;
 
       // Store token in localStorage if remember me is checked
-      if (rememberMe && data.token) {
-        localStorage.setItem("auth_token", data.token);
+      if (rememberMe && data.access_token) {
+        localStorage.setItem("auth_token", data.access_token);
       }
 
       toast.success(t("login.successMessage"));
