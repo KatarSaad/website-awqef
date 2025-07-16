@@ -27,7 +27,7 @@ export class ContentService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/content/posts',
+            url: '/v1/api/content/posts',
             query: {
                 'search': search,
             },
@@ -44,7 +44,7 @@ export class ContentService {
     ): CancelablePromise<PostResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/content/posts',
+            url: '/v1/api/content/posts',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -60,7 +60,7 @@ export class ContentService {
     ): CancelablePromise<PostResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/content/posts/{id}',
+            url: '/v1/api/content/posts/{id}',
             path: {
                 'id': id,
             },
@@ -79,7 +79,7 @@ export class ContentService {
     ): CancelablePromise<PostResponseDto> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/v1/content/posts/{id}',
+            url: '/v1/api/content/posts/{id}',
             path: {
                 'id': id,
             },
@@ -98,7 +98,7 @@ export class ContentService {
     ): CancelablePromise<PostResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/content/posts/{id}',
+            url: '/v1/api/content/posts/{id}',
             path: {
                 'id': id,
             },
@@ -115,7 +115,7 @@ export class ContentService {
     ): CancelablePromise<WebsiteCommentResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/content/website-comments/{id}',
+            url: '/v1/api/content/website-comments/{id}',
             path: {
                 'id': id,
             },
@@ -134,7 +134,7 @@ export class ContentService {
     ): CancelablePromise<WebsiteCommentResponseDto> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/v1/content/website-comments/{id}',
+            url: '/v1/api/content/website-comments/{id}',
             path: {
                 'id': id,
             },
@@ -153,7 +153,7 @@ export class ContentService {
     ): CancelablePromise<WebsiteCommentResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/content/website-comments/{id}',
+            url: '/v1/api/content/website-comments/{id}',
             path: {
                 'id': id,
             },
@@ -170,7 +170,7 @@ export class ContentService {
     ): CancelablePromise<WebsiteCommentResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/content/website-comments',
+            url: '/v1/api/content/website-comments',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -186,7 +186,7 @@ export class ContentService {
     ): CancelablePromise<RatingResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/content/ratings/{id}',
+            url: '/v1/api/content/ratings/{id}',
             path: {
                 'id': id,
             },
@@ -203,7 +203,7 @@ export class ContentService {
     ): CancelablePromise<RatingResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/content/ratings/{id}',
+            url: '/v1/api/content/ratings/{id}',
             path: {
                 'id': id,
             },
@@ -220,7 +220,7 @@ export class ContentService {
     ): CancelablePromise<RatingResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/content/ratings',
+            url: '/v1/api/content/ratings',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -236,7 +236,7 @@ export class ContentService {
     ): CancelablePromise<ShareLogResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/content/share-logs/{id}',
+            url: '/v1/api/content/share-logs/{id}',
             path: {
                 'id': id,
             },
@@ -253,7 +253,7 @@ export class ContentService {
     ): CancelablePromise<ShareLogResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/content/share-logs/{id}',
+            url: '/v1/api/content/share-logs/{id}',
             path: {
                 'id': id,
             },
@@ -270,7 +270,7 @@ export class ContentService {
     ): CancelablePromise<ShareLogResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/content/share-logs',
+            url: '/v1/api/content/share-logs',
             body: requestBody,
             mediaType: 'application/json',
         });

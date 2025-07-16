@@ -44,7 +44,7 @@ export class SeedsService {
     public static seedControllerSeedContent(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/seeds/content',
+            url: '/v1/api/seeds/content',
         });
     }
     /**
@@ -55,7 +55,7 @@ export class SeedsService {
     public static seedControllerSeedProject(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/seeds/project',
+            url: '/v1/api/seeds/project',
         });
     }
     /**
@@ -66,7 +66,7 @@ export class SeedsService {
     public static seedControllerSeedAll(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/seeds/all',
+            url: '/v1/api/seeds/all',
         });
     }
 }

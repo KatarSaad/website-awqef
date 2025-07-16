@@ -16,7 +16,7 @@ export class FaqService {
     public static faqControllerListFaqs(): CancelablePromise<Array<FaqResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/faq',
+            url: '/v1/api/faq',
         });
     }
     /**
@@ -30,7 +30,7 @@ export class FaqService {
     ): CancelablePromise<FaqResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/faq',
+            url: '/v1/api/faq',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -46,7 +46,7 @@ export class FaqService {
     ): CancelablePromise<FaqResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/faq/{id}',
+            url: '/v1/api/faq/{id}',
             path: {
                 'id': id,
             },
@@ -63,7 +63,7 @@ export class FaqService {
     ): CancelablePromise<FaqResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/faq/{id}',
+            url: '/v1/api/faq/{id}',
             path: {
                 'id': id,
             },

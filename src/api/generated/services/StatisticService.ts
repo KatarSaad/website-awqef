@@ -16,7 +16,7 @@ export class StatisticService {
     public static statisticControllerListStatistics(): CancelablePromise<Array<StatisticResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/statistic',
+            url: '/v1/api/statistic',
         });
     }
     /**
@@ -30,7 +30,7 @@ export class StatisticService {
     ): CancelablePromise<StatisticResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/statistic',
+            url: '/v1/api/statistic',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -46,7 +46,7 @@ export class StatisticService {
     ): CancelablePromise<StatisticResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/statistic/{id}',
+            url: '/v1/api/statistic/{id}',
             path: {
                 'id': id,
             },
@@ -63,7 +63,7 @@ export class StatisticService {
     ): CancelablePromise<StatisticResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/statistic/{id}',
+            url: '/v1/api/statistic/{id}',
             path: {
                 'id': id,
             },

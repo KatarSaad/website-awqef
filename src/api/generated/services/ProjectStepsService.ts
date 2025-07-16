@@ -20,7 +20,7 @@ export class ProjectStepsService {
     ): CancelablePromise<Array<ProjectStepResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/project-steps/{projectId}',
+            url: '/v1/api/project-steps/{projectId}',
             path: {
                 'projectId': projectId,
             },
@@ -39,7 +39,7 @@ export class ProjectStepsService {
     ): CancelablePromise<ProjectStepResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/project-steps/{projectId}',
+            url: '/v1/api/project-steps/{projectId}',
             path: {
                 'projectId': projectId,
             },
@@ -58,7 +58,7 @@ export class ProjectStepsService {
     ): CancelablePromise<ProjectStepResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/project-steps/step/{id}',
+            url: '/v1/api/project-steps/step/{id}',
             path: {
                 'id': id,
             },
@@ -77,7 +77,7 @@ export class ProjectStepsService {
     ): CancelablePromise<ProjectStepResponseDto> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/v1/project-steps/step/{id}',
+            url: '/v1/api/project-steps/step/{id}',
             path: {
                 'id': id,
             },
@@ -96,7 +96,7 @@ export class ProjectStepsService {
     ): CancelablePromise<ProjectStepResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/project-steps/step/{id}',
+            url: '/v1/api/project-steps/step/{id}',
             path: {
                 'id': id,
             },

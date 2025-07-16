@@ -20,7 +20,7 @@ export class OrganizationMembersService {
     ): CancelablePromise<Array<OrganizationMemberResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/organization-members/{organizationId}',
+            url: '/v1/api/organization-members/{organizationId}',
             path: {
                 'organizationId': organizationId,
             },
@@ -39,7 +39,7 @@ export class OrganizationMembersService {
     ): CancelablePromise<OrganizationMemberResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/organization-members/{organizationId}',
+            url: '/v1/api/organization-members/{organizationId}',
             path: {
                 'organizationId': organizationId,
             },
@@ -58,7 +58,7 @@ export class OrganizationMembersService {
     ): CancelablePromise<OrganizationMemberResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/organization-members/member/{id}',
+            url: '/v1/api/organization-members/member/{id}',
             path: {
                 'id': id,
             },
@@ -77,7 +77,7 @@ export class OrganizationMembersService {
     ): CancelablePromise<OrganizationMemberResponseDto> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/v1/organization-members/member/{id}',
+            url: '/v1/api/organization-members/member/{id}',
             path: {
                 'id': id,
             },
@@ -96,7 +96,7 @@ export class OrganizationMembersService {
     ): CancelablePromise<OrganizationMemberResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/organization-members/member/{id}',
+            url: '/v1/api/organization-members/member/{id}',
             path: {
                 'id': id,
             },

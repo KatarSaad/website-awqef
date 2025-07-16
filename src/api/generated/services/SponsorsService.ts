@@ -20,7 +20,7 @@ export class SponsorsService {
     ): CancelablePromise<Array<SponsorResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/sponsors/{projectId}',
+            url: '/v1/api/sponsors/{projectId}',
             path: {
                 'projectId': projectId,
             },
@@ -39,7 +39,7 @@ export class SponsorsService {
     ): CancelablePromise<SponsorResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/sponsors/{projectId}',
+            url: '/v1/api/sponsors/{projectId}',
             path: {
                 'projectId': projectId,
             },
@@ -58,7 +58,7 @@ export class SponsorsService {
     ): CancelablePromise<SponsorResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/sponsors/sponsor/{id}',
+            url: '/v1/api/sponsors/sponsor/{id}',
             path: {
                 'id': id,
             },
@@ -77,7 +77,7 @@ export class SponsorsService {
     ): CancelablePromise<SponsorResponseDto> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/v1/sponsors/sponsor/{id}',
+            url: '/v1/api/sponsors/sponsor/{id}',
             path: {
                 'id': id,
             },
@@ -96,7 +96,7 @@ export class SponsorsService {
     ): CancelablePromise<SponsorResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/sponsors/sponsor/{id}',
+            url: '/v1/api/sponsors/sponsor/{id}',
             path: {
                 'id': id,
             },

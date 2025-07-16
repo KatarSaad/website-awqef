@@ -16,7 +16,7 @@ export class ContentReferenceService {
     public static contentReferenceControllerListContentReferences(): CancelablePromise<Array<ContentReferenceResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/content-reference',
+            url: '/v1/api/content-reference',
         });
     }
     /**
@@ -30,7 +30,7 @@ export class ContentReferenceService {
     ): CancelablePromise<ContentReferenceResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/content-reference',
+            url: '/v1/api/content-reference',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -46,7 +46,7 @@ export class ContentReferenceService {
     ): CancelablePromise<ContentReferenceResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/content-reference/{id}',
+            url: '/v1/api/content-reference/{id}',
             path: {
                 'id': id,
             },
@@ -63,7 +63,7 @@ export class ContentReferenceService {
     ): CancelablePromise<ContentReferenceResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/content-reference/{id}',
+            url: '/v1/api/content-reference/{id}',
             path: {
                 'id': id,
             },

@@ -17,7 +17,7 @@ export class WebsiteOrganizationsService {
     public static websiteOrganizationControllerListWebsiteOrganizations(): CancelablePromise<Array<WebsiteOrganizationResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/website-organizations',
+            url: '/v1/api/website-organizations',
         });
     }
     /**
@@ -31,7 +31,7 @@ export class WebsiteOrganizationsService {
     ): CancelablePromise<WebsiteOrganizationResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/website-organizations',
+            url: '/v1/api/website-organizations',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -47,7 +47,7 @@ export class WebsiteOrganizationsService {
     ): CancelablePromise<WebsiteOrganizationResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/website-organizations/{id}',
+            url: '/v1/api/website-organizations/{id}',
             path: {
                 'id': id,
             },
@@ -66,7 +66,7 @@ export class WebsiteOrganizationsService {
     ): CancelablePromise<WebsiteOrganizationResponseDto> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/v1/website-organizations/{id}',
+            url: '/v1/api/website-organizations/{id}',
             path: {
                 'id': id,
             },
@@ -85,7 +85,7 @@ export class WebsiteOrganizationsService {
     ): CancelablePromise<WebsiteOrganizationResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/website-organizations/{id}',
+            url: '/v1/api/website-organizations/{id}',
             path: {
                 'id': id,
             },

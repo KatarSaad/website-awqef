@@ -17,7 +17,7 @@ export class CertificationsService {
     public static certificationControllerListCertifications(): CancelablePromise<Array<CertificationResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/certifications',
+            url: '/v1/api/certifications',
         });
     }
     /**
@@ -31,7 +31,7 @@ export class CertificationsService {
     ): CancelablePromise<CertificationResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/certifications',
+            url: '/v1/api/certifications',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -47,7 +47,7 @@ export class CertificationsService {
     ): CancelablePromise<CertificationResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/certifications/{id}',
+            url: '/v1/api/certifications/{id}',
             path: {
                 'id': id,
             },
@@ -66,7 +66,7 @@ export class CertificationsService {
     ): CancelablePromise<CertificationResponseDto> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/v1/certifications/{id}',
+            url: '/v1/api/certifications/{id}',
             path: {
                 'id': id,
             },
@@ -85,7 +85,7 @@ export class CertificationsService {
     ): CancelablePromise<CertificationResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/certifications/{id}',
+            url: '/v1/api/certifications/{id}',
             path: {
                 'id': id,
             },

@@ -20,7 +20,7 @@ export class InvestmentsService {
     ): CancelablePromise<Array<InvestmentResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/investments/{projectId}',
+            url: '/v1/api/investments/{projectId}',
             path: {
                 'projectId': projectId,
             },
@@ -39,7 +39,7 @@ export class InvestmentsService {
     ): CancelablePromise<InvestmentResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/investments/{projectId}',
+            url: '/v1/api/investments/{projectId}',
             path: {
                 'projectId': projectId,
             },
@@ -58,7 +58,7 @@ export class InvestmentsService {
     ): CancelablePromise<InvestmentResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/investments/investment/{id}',
+            url: '/v1/api/investments/investment/{id}',
             path: {
                 'id': id,
             },
@@ -77,7 +77,7 @@ export class InvestmentsService {
     ): CancelablePromise<InvestmentResponseDto> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/v1/investments/investment/{id}',
+            url: '/v1/api/investments/investment/{id}',
             path: {
                 'id': id,
             },
@@ -96,7 +96,7 @@ export class InvestmentsService {
     ): CancelablePromise<InvestmentResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/investments/investment/{id}',
+            url: '/v1/api/investments/investment/{id}',
             path: {
                 'id': id,
             },

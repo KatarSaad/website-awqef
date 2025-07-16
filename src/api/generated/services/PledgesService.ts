@@ -20,7 +20,7 @@ export class PledgesService {
     ): CancelablePromise<Array<PledgeResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/pledges/{projectId}',
+            url: '/v1/api/pledges/{projectId}',
             path: {
                 'projectId': projectId,
             },
@@ -39,7 +39,7 @@ export class PledgesService {
     ): CancelablePromise<PledgeResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/pledges/{projectId}',
+            url: '/v1/api/pledges/{projectId}',
             path: {
                 'projectId': projectId,
             },
@@ -58,7 +58,7 @@ export class PledgesService {
     ): CancelablePromise<PledgeResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/pledges/pledge/{id}',
+            url: '/v1/api/pledges/pledge/{id}',
             path: {
                 'id': id,
             },
@@ -77,7 +77,7 @@ export class PledgesService {
     ): CancelablePromise<PledgeResponseDto> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/v1/pledges/pledge/{id}',
+            url: '/v1/api/pledges/pledge/{id}',
             path: {
                 'id': id,
             },
@@ -96,7 +96,7 @@ export class PledgesService {
     ): CancelablePromise<PledgeResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/pledges/pledge/{id}',
+            url: '/v1/api/pledges/pledge/{id}',
             path: {
                 'id': id,
             },

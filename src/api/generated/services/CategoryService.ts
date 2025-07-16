@@ -16,7 +16,7 @@ export class CategoryService {
     public static categoryControllerListCategories(): CancelablePromise<Array<CategoryResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/category',
+            url: '/v1/api/category',
         });
     }
     /**
@@ -30,7 +30,7 @@ export class CategoryService {
     ): CancelablePromise<CategoryResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/category',
+            url: '/v1/api/category',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -46,7 +46,7 @@ export class CategoryService {
     ): CancelablePromise<CategoryResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/category/{id}',
+            url: '/v1/api/category/{id}',
             path: {
                 'id': id,
             },
@@ -63,7 +63,7 @@ export class CategoryService {
     ): CancelablePromise<CategoryResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/category/{id}',
+            url: '/v1/api/category/{id}',
             path: {
                 'id': id,
             },

@@ -16,7 +16,7 @@ export class SectionService {
     public static sectionControllerListSections(): CancelablePromise<Array<SectionResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/section',
+            url: '/v1/api/section',
         });
     }
     /**
@@ -30,7 +30,7 @@ export class SectionService {
     ): CancelablePromise<SectionResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/section',
+            url: '/v1/api/section',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -46,7 +46,7 @@ export class SectionService {
     ): CancelablePromise<SectionResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/section/{id}',
+            url: '/v1/api/section/{id}',
             path: {
                 'id': id,
             },
@@ -63,7 +63,7 @@ export class SectionService {
     ): CancelablePromise<SectionResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/section/{id}',
+            url: '/v1/api/section/{id}',
             path: {
                 'id': id,
             },

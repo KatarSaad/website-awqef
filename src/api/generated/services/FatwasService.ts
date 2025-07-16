@@ -17,7 +17,7 @@ export class FatwasService {
     public static fatwaControllerListFatwas(): CancelablePromise<Array<FatwaResponseDto>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/fatwas',
+            url: '/v1/api/fatwas',
         });
     }
     /**
@@ -31,7 +31,7 @@ export class FatwasService {
     ): CancelablePromise<FatwaResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/fatwas',
+            url: '/v1/api/fatwas',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -47,7 +47,7 @@ export class FatwasService {
     ): CancelablePromise<FatwaResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/fatwas/{id}',
+            url: '/v1/api/fatwas/{id}',
             path: {
                 'id': id,
             },
@@ -66,7 +66,7 @@ export class FatwasService {
     ): CancelablePromise<FatwaResponseDto> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/v1/fatwas/{id}',
+            url: '/v1/api/fatwas/{id}',
             path: {
                 'id': id,
             },
@@ -85,7 +85,7 @@ export class FatwasService {
     ): CancelablePromise<FatwaResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/fatwas/{id}',
+            url: '/v1/api/fatwas/{id}',
             path: {
                 'id': id,
             },

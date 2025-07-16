@@ -21,7 +21,7 @@ export class ProjectService {
     ): CancelablePromise<ProjectResponseDto> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/v1/project',
+            url: '/v1/api/project',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -39,7 +39,7 @@ export class ProjectService {
     ): CancelablePromise<PaginatedResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/project',
+            url: '/v1/api/project',
             query: {
                 'page': page,
                 'limit': limit,
@@ -57,7 +57,7 @@ export class ProjectService {
     ): CancelablePromise<ProjectResponseDto> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/project/{id}',
+            url: '/v1/api/project/{id}',
             path: {
                 'id': id,
             },
@@ -76,7 +76,7 @@ export class ProjectService {
     ): CancelablePromise<ProjectResponseDto> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/v1/project/{id}',
+            url: '/v1/api/project/{id}',
             path: {
                 'id': id,
             },
@@ -95,7 +95,7 @@ export class ProjectService {
     ): CancelablePromise<ProjectResponseDto> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/v1/project/{id}',
+            url: '/v1/api/project/{id}',
             path: {
                 'id': id,
             },
