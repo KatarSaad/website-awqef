@@ -29,21 +29,6 @@ const nextConfig = {
     return config;
   },
   // Add CORS headers
-  async headers() {
-    return [
-      {
-        // Apply to all routes
-        source: "/:path*",
-        headers: [
-          { key: "Access-Control-Allow-Credentials", value: "true" },
-          { key: "Access-Control-Allow-Origin", value: "*" },
-          { key: "Access-Control-Allow-Methods", value: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
-          { key: "Access-Control-Allow-Headers", value: "Origin, X-Requested-With, Content-Type, Accept, Authorization" },
-          { key: "Access-Control-Max-Age", value: "86400" },
-        ],
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;
