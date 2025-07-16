@@ -24,6 +24,8 @@ export default function LoginPage() {
 
     try {
       await login(email, password);
+      // Add a delay to ensure AuthContext state is updated before redirect
+      await new Promise((resolve) => setTimeout(resolve, 800));
       router.push(from);
     } catch (err: any) {
       setError(err.message || "Login failed. Please check your credentials.");
