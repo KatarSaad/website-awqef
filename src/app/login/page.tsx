@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useAuthContext } from "@/contexts/AuthContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -16,6 +17,7 @@ export default function LoginPage() {
   const from = searchParams.get("from") || "/";
 
   const { login } = useAuthContext();
+  const { t, language, setLanguage, isRTL } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,119 +26,106 @@ export default function LoginPage() {
 
     try {
       await login(email, password);
-      // Add a delay to ensure AuthContext state is updated before redirect
       await new Promise((resolve) => setTimeout(resolve, 800));
       router.push(from);
     } catch (err: any) {
-      setError(err.message || "Login failed. Please check your credentials.");
+      setError(err.message || t("login.error.invalidCredentials"));
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-md space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight">
-            Sign in to your account
+    <div
+      className={`min-h-screen flex items-center justify-center bg-background-light px-4 ${
+        isRTL ? "font-arabic" : "font-poppins"
+      }`}
+      dir={isRTL ? "rtl" : "ltr"}
+    >
+      <div className="w-full max-w-md bg-paper rounded-2xl shadow-xl p-8 animate-fade-in">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-3xl font-bold text-primary text-center w-full">
+            {t("login.title")}
           </h2>
+          <button
+            onClick={() => setLanguage(language === "en" ? "ar" : "en")}
+            className="ml-2 text-secondary font-semibold px-2 py-1 rounded hover:bg-secondary/10 transition"
+            aria-label="Switch language"
+          >
+            {language === "en" ? "AR" : "EN"}
+          </button>
         </div>
-
         {error && (
-          <div className="rounded-md bg-red-50 p-4">
-            <div className="flex">
-              <div className="ml-3">
-                <h3 className="text-sm font-medium text-red-800">Error</h3>
-                <div className="mt-2 text-sm text-red-700">
-                  <p>{error}</p>
-                </div>
-              </div>
-            </div>
+          <div className="mb-4 rounded-lg bg-error/10 p-3 text-error text-center font-medium">
+            {error}
           </div>
         )}
-
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="-space-y-px rounded-md shadow-sm">
-            <div>
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="email-address"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="relative block w-full rounded-t-md border-0 py-1.5 px-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={isLoading}
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                className="relative block w-full rounded-b-md border-0 py-1.5 px-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                disabled={isLoading}
-              />
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input
-                id="remember-me"
-                name="remember-me"
-                type="checkbox"
-                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-              />
-              <label
-                htmlFor="remember-me"
-                className="ml-2 block text-sm text-gray-900"
-              >
-                Remember me
-              </label>
-            </div>
-
-            <div className="text-sm">
-              <Link
-                href="/forgot-password"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
-                Forgot your password?
-              </Link>
-            </div>
-          </div>
-
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <button
-              type="submit"
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-foreground mb-1"
+            >
+              {t("login.email")}
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              required
+              className="w-full rounded-lg border border-grey-200 px-4 py-2 text-foreground bg-background-light focus:ring-2 focus:ring-primary-400 transition placeholder:text-muted-foreground"
+              placeholder={t("login.email")}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               disabled={isLoading}
-              className="group relative flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-indigo-400"
-            >
-              {isLoading ? "Signing in..." : "Sign in"}
-            </button>
+              dir={isRTL ? "rtl" : "ltr"}
+            />
           </div>
-
-          <div className="text-sm text-center">
-            <span className="text-gray-500">Don't have an account?</span>{" "}
-            <Link
-              href="/register"
-              className="font-medium text-indigo-600 hover:text-indigo-500"
+          <div>
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-foreground mb-1"
             >
-              Sign up
+              {t("login.password")}
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autoComplete="current-password"
+              required
+              className="w-full rounded-lg border border-grey-200 px-4 py-2 text-foreground bg-background-light focus:ring-2 focus:ring-primary-400 transition placeholder:text-muted-foreground"
+              placeholder={t("login.password")}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              disabled={isLoading}
+              dir={isRTL ? "rtl" : "ltr"}
+            />
+          </div>
+          <div className="flex items-center justify-between">
+            <label className="flex items-center text-sm text-muted-foreground cursor-pointer">
+              <input type="checkbox" className="mr-2 accent-primary" />
+              {t("login.rememberMe")}
+            </label>
+            <Link
+              href="/forgot-password"
+              className="text-primary hover:underline"
+            >
+              {t("login.forgotPassword")}
+            </Link>
+          </div>
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full py-2 rounded-lg bg-primary-500 hover:bg-primary-600 text-white font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 disabled:bg-primary-300 shadow-md"
+          >
+            {isLoading ? t("login.signingIn") : t("login.signIn")}
+          </button>
+          <div className="text-center text-sm mt-4">
+            {t("login.noAccount")}{" "}
+            <Link href="/register" className="text-secondary hover:underline">
+              {t("login.createAccount")}
             </Link>
           </div>
         </form>
