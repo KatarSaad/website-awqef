@@ -166,12 +166,12 @@ const Header = () => {
             href="/"
             className="flex items-center h-16 p-0 m-0 flex-shrink-0"
           >
-            <Image
+            <img
               src="/logo.svg"
               alt="Awqef Logo"
               width={180}
               height={60}
-              priority
+              loading="eager"
             />
           </Link>
 

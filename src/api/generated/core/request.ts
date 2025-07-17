@@ -263,6 +263,10 @@ export const catchErrorCodes = (options: ApiRequestOptions, result: ApiResult): 
 
     const error = errors[result.status];
     if (error) {
+        // Dispatch an event for 401 errors to handle token issues
+        if (result.status === 401 && typeof window !== 'undefined') {
+            window.dispatchEvent(new Event('unauthorized'));
+        }
         throw new ApiError(options, result, error);
     }
 

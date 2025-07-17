@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import type React from "react";
+
+import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useAuthContext } from "@/contexts/AuthContext";
@@ -10,30 +12,57 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const router = useRouter();
   const searchParams = useSearchParams();
   const from = searchParams.get("from") || "/";
 
-  const { login } = useAuthContext();
+  const { user, login, initialized, loading } = useAuthContext();
   const { t, language, setLanguage, isRTL } = useLanguage();
+
+  // Redirect if user is already authenticated
+  useEffect(() => {
+    if (initialized && user) {
+      window.location.href = from; // Use direct location change instead of router
+    }
+  }, [initialized, user, from]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-    setIsLoading(true);
+    setIsSubmitting(true);
 
     try {
       await login(email, password);
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      router.push(from);
+      
+      // Use direct location change instead of Next.js router
+      // This forces a full page reload which should resolve the blank page issue
+      window.location.href = from;
     } catch (err: any) {
+      console.error("Login error:", err);
       setError(err.message || t("login.error.invalidCredentials"));
-    } finally {
-      setIsLoading(false);
+      setIsSubmitting(false);
     }
   };
+
+  // Show loading spinner if not initialized or loading
+  if (!initialized || loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+      </div>
+    );
+  }
+
+  // Don't render login form if user is already authenticated
+  if (user) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -55,11 +84,13 @@ export default function LoginPage() {
             {language === "en" ? "AR" : "EN"}
           </button>
         </div>
+
         {error && (
           <div className="mb-4 rounded-lg bg-error/10 p-3 text-error text-center font-medium">
             {error}
           </div>
         )}
+
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label
@@ -78,10 +109,11 @@ export default function LoginPage() {
               placeholder={t("login.email")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              disabled={isLoading}
+              disabled={isSubmitting || loading}
               dir={isRTL ? "rtl" : "ltr"}
             />
           </div>
+
           <div>
             <label
               htmlFor="password"
@@ -99,13 +131,18 @@ export default function LoginPage() {
               placeholder={t("login.password")}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              disabled={isLoading}
+              disabled={isSubmitting || loading}
               dir={isRTL ? "rtl" : "ltr"}
             />
           </div>
+
           <div className="flex items-center justify-between">
             <label className="flex items-center text-sm text-muted-foreground cursor-pointer">
-              <input type="checkbox" className="mr-2 accent-primary" />
+              <input
+                type="checkbox"
+                className="mr-2 accent-primary"
+                disabled={isSubmitting || loading}
+              />
               {t("login.rememberMe")}
             </label>
             <Link
@@ -115,13 +152,22 @@ export default function LoginPage() {
               {t("login.forgotPassword")}
             </Link>
           </div>
+
           <button
             type="submit"
-            disabled={isLoading}
-            className="w-full py-2 rounded-lg bg-primary-500 hover:bg-primary-600 text-white font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 disabled:bg-primary-300 shadow-md"
+            disabled={isSubmitting || loading}
+            className="w-full py-2 rounded-lg bg-primary-500 hover:bg-primary-600 text-white font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 disabled:bg-primary-300 shadow-md flex items-center justify-center"
           >
-            {isLoading ? t("login.signingIn") : t("login.signIn")}
+            {isSubmitting || loading ? (
+              <>
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                {t("login.signingIn")}
+              </>
+            ) : (
+              t("login.signIn")
+            )}
           </button>
+
           <div className="text-center text-sm mt-4">
             {t("login.noAccount")}{" "}
             <Link href="/register" className="text-secondary hover:underline">

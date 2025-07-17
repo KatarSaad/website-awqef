@@ -1,0 +1,1 @@
+import { OpenAPIConfig } from "@/api/generated/core/OpenAPI";\n\ndeclare global {\n  interface Window {\n    OpenAPI?: OpenAPIConfig;\n  }\n}\n

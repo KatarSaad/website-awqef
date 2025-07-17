@@ -111,6 +111,18 @@ const AuthService = {
 
       // Store user in localStorage
       AuthService.setUser(response.user);
+      
+      // Update OpenAPI token immediately
+      if (typeof window !== "undefined") {
+        // Set token directly in OpenAPI config
+        if (window.OpenAPI) {
+          window.OpenAPI.TOKEN = response.access_token;
+        }
+        
+        // Also set it directly in the module
+        const OpenAPI = await import("@/api/generated/core/OpenAPI").then(m => m.OpenAPI);
+        OpenAPI.TOKEN = response.access_token;
+      }
 
       return response;
     } catch (error: any) {

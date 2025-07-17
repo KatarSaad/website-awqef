@@ -50,6 +50,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     set({ loading: true, error: null });
     try {
       const response = await AuthService.login(email, password);
+      // Update state immediately to avoid blank page
       set({ 
         user: response.user, 
         loading: false,

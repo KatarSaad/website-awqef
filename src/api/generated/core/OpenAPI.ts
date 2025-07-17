@@ -26,12 +26,19 @@ export const OpenAPI: OpenAPIConfig = {
   VERSION: "1.0",
   WITH_CREDENTIALS: false,
   CREDENTIALS: "include",
-  TOKEN:
-    typeof window !== "undefined"
-      ? window.localStorage.getItem(TOKEN_KEY) || ""
-      : "",
+  TOKEN: () => {
+    if (typeof window !== "undefined") {
+      return window.localStorage.getItem(TOKEN_KEY) || "";
+    }
+    return "";
+  },
   USERNAME: undefined,
   PASSWORD: undefined,
   HEADERS: undefined,
   ENCODE_PATH: undefined,
 };
+
+// Make OpenAPI available globally for direct access
+if (typeof window !== "undefined") {
+  window.OpenAPI = OpenAPI;
+}

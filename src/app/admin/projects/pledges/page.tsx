@@ -59,6 +59,7 @@ import {
 import { toast } from "sonner";
 import { useSearchParams } from "next/navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuthContext } from "@/contexts/AuthContext";
 
 export default function AdminProjectsPledges() {
   const { t } = useLanguage();
@@ -72,6 +73,8 @@ export default function AdminProjectsPledges() {
 
   const searchParams = useSearchParams();
   const projectId = searchParams.get("projectId");
+
+  const { initialized, isAuthenticated } = useAuthContext();
 
   // Fetch pledges with pagination and search
   const {
@@ -87,12 +90,14 @@ export default function AdminProjectsPledges() {
         search,
         projectId ? parseInt(projectId) : undefined
       ),
+    enabled: initialized && isAuthenticated,
   });
 
   // Fetch projects for filtering
   const { data: projectsData } = useQuery({
     queryKey: ["admin", "projects-dropdown"],
     queryFn: () => ProjectService.projectControllerListProjects(1, 100, ""),
+    enabled: initialized && isAuthenticated,
   });
 
   const handleApprovePledge = async (id: number) => {

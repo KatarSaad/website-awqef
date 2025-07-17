@@ -57,17 +57,21 @@ import {
 } from "@/components/ui/card";
 import { toast } from "sonner";
 import { useSearchParams } from "next/navigation";
+import { useAuthContext } from "@/contexts/AuthContext";
 
 export default function AdminProjectsInvestments() {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [search, setSearch] = useState("");
-  const [selectedInvestment, setSelectedInvestment] = useState<InvestmentResponseDto | null>(null);
+  const [selectedInvestment, setSelectedInvestment] =
+    useState<InvestmentResponseDto | null>(null);
   const [isViewingDetails, setIsViewingDetails] = useState(false);
   const [activeTab, setActiveTab] = useState("all");
 
   const searchParams = useSearchParams();
   const projectId = searchParams.get("projectId");
+
+  const { initialized, isAuthenticated } = useAuthContext();
 
   // Fetch investments with pagination and search
   const {
@@ -75,19 +79,30 @@ export default function AdminProjectsInvestments() {
     isLoading,
     refetch,
   } = useQuery({
-    queryKey: ["admin", "investments", page, limit, search, projectId, activeTab],
-    queryFn: () => InvestmentsService.investmentControllerListInvestments(
-      page, 
-      limit, 
+    queryKey: [
+      "admin",
+      "investments",
+      page,
+      limit,
       search,
-      projectId ? parseInt(projectId) : undefined
-    ),
+      projectId,
+      activeTab,
+    ],
+    queryFn: () =>
+      InvestmentsService.investmentControllerListInvestments(
+        page,
+        limit,
+        search,
+        projectId ? parseInt(projectId) : undefined
+      ),
+    enabled: initialized && isAuthenticated,
   });
 
   // Fetch projects for filtering
   const { data: projectsData } = useQuery({
     queryKey: ["admin", "projects-dropdown"],
     queryFn: () => ProjectService.projectControllerListProjects(1, 100, ""),
+    enabled: initialized && isAuthenticated,
   });
 
   const handleApproveInvestment = async (id: number) => {
@@ -132,7 +147,9 @@ export default function AdminProjectsInvestments() {
   const filteredInvestments =
     activeTab === "all"
       ? investments
-      : investments.filter((investment: InvestmentResponseDto) => investment.status === activeTab);
+      : investments.filter(
+          (investment: InvestmentResponseDto) => investment.status === activeTab
+        );
 
   return (
     <div className="space-y-6">
@@ -235,86 +252,103 @@ export default function AdminProjectsInvestments() {
                         </TableCell>
                       </TableRow>
                     ) : (
-                      filteredInvestments.map((investment: InvestmentResponseDto) => (
-                        <TableRow key={investment.id}>
-                          <TableCell className="font-medium">
-                            <div className="flex items-center gap-2">
-                              <User className="h-4 w-4 text-muted-foreground" />
-                              <span>{investment.investor?.name || "Anonymous"}</span>
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="flex items-center gap-2">
-                              <Briefcase className="h-4 w-4 text-muted-foreground" />
-                              <span className="truncate max-w-[150px]">
-                                {investment.project?.title?.en || investment.project?.title || "Unknown Project"}
-                              </span>
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="flex items-center gap-2">
-                              <DollarSign className="h-4 w-4 text-muted-foreground" />
-                              <span>${investment.amount.toLocaleString()}</span>
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <Badge
-                              variant="outline"
-                              className={getStatusBadgeClass(investment.status)}
-                            >
-                              {investment.status}
-                            </Badge>
-                          </TableCell>
-                          <TableCell>
-                            <div className="flex items-center gap-2">
-                              <Calendar className="h-4 w-4 text-muted-foreground" />
-                              <span>
-                                {investment.createdAt
-                                  ? new Date(investment.createdAt).toLocaleDateString()
-                                  : "N/A"}
-                              </span>
-                            </div>
-                          </TableCell>
-                          <TableCell className="text-right">
-                            <DropdownMenu>
-                              <DropdownMenuTrigger asChild>
-                                <Button variant="ghost" size="icon">
-                                  <MoreHorizontal className="h-4 w-4" />
-                                  <span className="sr-only">Actions</span>
-                                </Button>
-                              </DropdownMenuTrigger>
-                              <DropdownMenuContent align="end">
-                                <DropdownMenuItem
-                                  onClick={() => {
-                                    setSelectedInvestment(investment);
-                                    setIsViewingDetails(true);
-                                  }}
-                                >
-                                  <Eye className="mr-2 h-4 w-4" /> View Details
-                                </DropdownMenuItem>
-                                {investment.status === "pending" && (
-                                  <>
-                                    <DropdownMenuItem
-                                      onClick={() => handleApproveInvestment(investment.id)}
-                                    >
-                                      <Badge className="bg-green-100 text-green-800 mr-2">
-                                        Approve
-                                      </Badge>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem
-                                      onClick={() => handleRejectInvestment(investment.id)}
-                                    >
-                                      <Badge className="bg-red-100 text-red-800 mr-2">
-                                        Reject
-                                      </Badge>
-                                    </DropdownMenuItem>
-                                  </>
+                      filteredInvestments.map(
+                        (investment: InvestmentResponseDto) => (
+                          <TableRow key={investment.id}>
+                            <TableCell className="font-medium">
+                              <div className="flex items-center gap-2">
+                                <User className="h-4 w-4 text-muted-foreground" />
+                                <span>
+                                  {investment.investor?.name || "Anonymous"}
+                                </span>
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="flex items-center gap-2">
+                                <Briefcase className="h-4 w-4 text-muted-foreground" />
+                                <span className="truncate max-w-[150px]">
+                                  {investment.project?.title?.en ||
+                                    investment.project?.title ||
+                                    "Unknown Project"}
+                                </span>
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <div className="flex items-center gap-2">
+                                <DollarSign className="h-4 w-4 text-muted-foreground" />
+                                <span>
+                                  ${investment.amount.toLocaleString()}
+                                </span>
+                              </div>
+                            </TableCell>
+                            <TableCell>
+                              <Badge
+                                variant="outline"
+                                className={getStatusBadgeClass(
+                                  investment.status
                                 )}
-                              </DropdownMenuContent>
-                            </DropdownMenu>
-                          </TableCell>
-                        </TableRow>
-                      ))
+                              >
+                                {investment.status}
+                              </Badge>
+                            </TableCell>
+                            <TableCell>
+                              <div className="flex items-center gap-2">
+                                <Calendar className="h-4 w-4 text-muted-foreground" />
+                                <span>
+                                  {investment.createdAt
+                                    ? new Date(
+                                        investment.createdAt
+                                      ).toLocaleDateString()
+                                    : "N/A"}
+                                </span>
+                              </div>
+                            </TableCell>
+                            <TableCell className="text-right">
+                              <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                  <Button variant="ghost" size="icon">
+                                    <MoreHorizontal className="h-4 w-4" />
+                                    <span className="sr-only">Actions</span>
+                                  </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end">
+                                  <DropdownMenuItem
+                                    onClick={() => {
+                                      setSelectedInvestment(investment);
+                                      setIsViewingDetails(true);
+                                    }}
+                                  >
+                                    <Eye className="mr-2 h-4 w-4" /> View
+                                    Details
+                                  </DropdownMenuItem>
+                                  {investment.status === "pending" && (
+                                    <>
+                                      <DropdownMenuItem
+                                        onClick={() =>
+                                          handleApproveInvestment(investment.id)
+                                        }
+                                      >
+                                        <Badge className="bg-green-100 text-green-800 mr-2">
+                                          Approve
+                                        </Badge>
+                                      </DropdownMenuItem>
+                                      <DropdownMenuItem
+                                        onClick={() =>
+                                          handleRejectInvestment(investment.id)
+                                        }
+                                      >
+                                        <Badge className="bg-red-100 text-red-800 mr-2">
+                                          Reject
+                                        </Badge>
+                                      </DropdownMenuItem>
+                                    </>
+                                  )}
+                                </DropdownMenuContent>
+                              </DropdownMenu>
+                            </TableCell>
+                          </TableRow>
+                        )
+                      )
                     )}
                   </TableBody>
                 </Table>
@@ -322,7 +356,8 @@ export default function AdminProjectsInvestments() {
 
               <div className="flex items-center justify-between mt-4">
                 <div className="text-sm text-muted-foreground">
-                  Showing {filteredInvestments.length} of {totalInvestments} investments
+                  Showing {filteredInvestments.length} of {totalInvestments}{" "}
+                  investments
                 </div>
                 <div className="flex items-center gap-2">
                   <Button
@@ -373,11 +408,15 @@ export default function AdminProjectsInvestments() {
             <div className="space-y-6 py-4">
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Investor Information</h3>
+                  <h3 className="text-lg font-semibold mb-4">
+                    Investor Information
+                  </h3>
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <span className="text-sm font-medium">Name:</span>
-                      <span>{selectedInvestment.investor?.name || "Anonymous"}</span>
+                      <span>
+                        {selectedInvestment.investor?.name || "Anonymous"}
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-sm font-medium">Email:</span>
@@ -391,7 +430,9 @@ export default function AdminProjectsInvestments() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Investment Details</h3>
+                  <h3 className="text-lg font-semibold mb-4">
+                    Investment Details
+                  </h3>
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <span className="text-sm font-medium">Amount:</span>
@@ -399,7 +440,11 @@ export default function AdminProjectsInvestments() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-sm font-medium">Status:</span>
-                      <Badge className={getStatusBadgeClass(selectedInvestment.status)}>
+                      <Badge
+                        className={getStatusBadgeClass(
+                          selectedInvestment.status
+                        )}
+                      >
                         {selectedInvestment.status}
                       </Badge>
                     </div>
@@ -407,15 +452,21 @@ export default function AdminProjectsInvestments() {
                       <span className="text-sm font-medium">Date:</span>
                       <span>
                         {selectedInvestment.createdAt
-                          ? new Date(selectedInvestment.createdAt).toLocaleDateString()
+                          ? new Date(
+                              selectedInvestment.createdAt
+                            ).toLocaleDateString()
                           : "N/A"}
                       </span>
                     </div>
                     {selectedInvestment.approvedAt && (
                       <div className="flex justify-between">
-                        <span className="text-sm font-medium">Approved Date:</span>
+                        <span className="text-sm font-medium">
+                          Approved Date:
+                        </span>
                         <span>
-                          {new Date(selectedInvestment.approvedAt).toLocaleDateString()}
+                          {new Date(
+                            selectedInvestment.approvedAt
+                          ).toLocaleDateString()}
                         </span>
                       </div>
                     )}
@@ -424,14 +475,16 @@ export default function AdminProjectsInvestments() {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-2">Project Information</h3>
+                <h3 className="text-lg font-semibold mb-2">
+                  Project Information
+                </h3>
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-sm font-medium">Project:</span>
                     <span>
-                      {selectedInvestment.project?.title?.en || 
-                       selectedInvestment.project?.title || 
-                       "Unknown Project"}
+                      {selectedInvestment.project?.title?.en ||
+                        selectedInvestment.project?.title ||
+                        "Unknown Project"}
                     </span>
                   </div>
                   <div className="flex justify-between">
@@ -444,7 +497,9 @@ export default function AdminProjectsInvestments() {
               {selectedInvestment.notes && (
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Notes</h3>
-                  <p className="text-sm text-gray-700">{selectedInvestment.notes}</p>
+                  <p className="text-sm text-gray-700">
+                    {selectedInvestment.notes}
+                  </p>
                 </div>
               )}
 
@@ -452,13 +507,17 @@ export default function AdminProjectsInvestments() {
                 <div className="flex justify-end gap-2">
                   <Button
                     variant="outline"
-                    onClick={() => handleRejectInvestment(selectedInvestment.id)}
+                    onClick={() =>
+                      handleRejectInvestment(selectedInvestment.id)
+                    }
                     className="bg-red-50 text-red-700 hover:bg-red-100"
                   >
                     Reject Investment
                   </Button>
                   <Button
-                    onClick={() => handleApproveInvestment(selectedInvestment.id)}
+                    onClick={() =>
+                      handleApproveInvestment(selectedInvestment.id)
+                    }
                     className="bg-green-600 text-white hover:bg-green-700"
                   >
                     Approve Investment
